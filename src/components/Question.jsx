@@ -4,6 +4,14 @@ const Question = () => {
   return (
     <QuestionLayout>
       <QuestionH1>질문 게시판</QuestionH1>
+      <QuestionBox>
+        <QuestionList>자주 묻는 질문</QuestionList>
+        <Hr />
+        <div>
+          <span>Q</span>
+          <QuestionItem>사이버캠퍼스? LMS? 코스모스가 뭔가요?</QuestionItem>
+        </div>
+      </QuestionBox>
     </QuestionLayout>
   );
 };
@@ -18,5 +26,19 @@ const QuestionH1 = styled.h1`
   font-weight: bold;
   padding: 60px;
 `;
+const QuestionBox = styled.div`
+  background-color: white;
+  width: 450px;
+  height: 300px;
+  border-radius: 40px;
+`;
+const QuestionList = styled.div`
+  font-size: 22px;
+  font-weight: bold;
+  padding: 30px 0px 0px 30px;
+`;
+const QuestionItem = styled.span``;
+
+const Hr = styled.hr``;
 
 export default Question;
