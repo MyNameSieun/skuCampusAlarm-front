@@ -1,13 +1,36 @@
+import styled from 'styled-components';
+import LinkClick from 'components/LinkClick';
 import SwiperImage from 'components/SwiperImage';
 import Navbar from 'components/common/Navbar';
+import Search from 'components/Search';
+import Frequencyinfo from './Frequencyinfo';
+import UsefulInfo from './UsefulInfo';
+import Question from 'components/Question';
+import ClubInfo from './ClubInfo';
 
 const Home = () => {
   return (
-    <div>
+    <HomeLayout>
       <Navbar />
-      <SwiperImage />
-    </div>
+      <LinkClickRow>
+        <SwiperImage />
+        <LinkClick />
+      </LinkClickRow>
+      <Search />
+      <Frequencyinfo />
+      <UsefulInfo />
+      <Question />
+      <ClubInfo />
+    </HomeLayout>
   );
 };
+const HomeLayout = styled.div`
+  padding: 0 250px;
+  background-color: white;
+`;
+const LinkClickRow = styled.div`
+  display: flex;
+  gap: 50px;
+`;
 
 export default Home;

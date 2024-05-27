@@ -5,40 +5,49 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 import styled from 'styled-components';
 
 const SwiperImage = () => {
   return (
-    <Swiper
+    <SwiperImageContainer
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      autoplay={{
-        delay: 600,
-        disableOnInteraction: false
-      }}
-      spaceBetween={50}
-      slidesPerView={3}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      spaceBetween={50} // 슬라이드간 거리
+      slidesPerView={1} // 보여질 개수
+      loop={true} //슬라이드 반복 여부
       navigation
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      // scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      autoplay={{
+        delay: 3000, // 자동 재생 시간 설정
+        disableOnInteraction: false // 상호작용 후 자동 재생 유지 여부
+      }}
+      speed={900} // 슬라이드 전환 속도 (밀리초)
     >
-      <SwiperSlideImage>
-        <SwiperSlide>
-          <img src="images/캐러셀1.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="images/캐러셀2.jpg" />
-        </SwiperSlide>
-      </SwiperSlideImage>
-    </Swiper>
+      <SwiperSlide>
+        <StyledImage src="images/캐러셀3.png" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <StyledImage src="images/캐러셀2.jpg" />
+      </SwiperSlide>
+    </SwiperImageContainer>
   );
 };
 
-const SwiperSlideImage = styled.div`
-  width: 600px;
-  height: 100px;
+const SwiperImageContainer = styled(Swiper)`
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+`;
+
+const StyledImage = styled.img`
+  margin-left: 55px;
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 export default SwiperImage;
