@@ -38,20 +38,21 @@ const UsefulInfo = () => {
   );
 };
 const UsefulInfoLayout = styled.div`
-  height: 620px;
+  height: 530px;
   width: 100%;
+  padding: 60px;
 `;
 
 const UsefulInfoH1 = styled.h1`
   font-size: 26px;
   font-weight: bold;
-  padding: 60px 0 30px 60px;
 `;
 const UsefulInfoLayoutList = styled.div`
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 30px;
+
+  margin-top: 3rem;
 `;
 const UsefulInfoLayoutItem = styled.div`
   border: 1px solid #dfdfdf;

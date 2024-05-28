@@ -7,6 +7,7 @@ import Frequencyinfo from './Frequencyinfo';
 import UsefulInfo from './UsefulInfo';
 import Question from 'components/Question';
 import ClubInfo from './ClubInfo';
+import Footer from 'components/common/Footer';
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <UsefulInfo />
       <Question />
       <ClubInfo />
+      <Footer />
     </HomeLayout>
   );
 };
