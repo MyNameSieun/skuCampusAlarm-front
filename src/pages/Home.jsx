@@ -27,8 +27,8 @@ const Home = () => {
   );
 };
 const HomeLayout = styled.div`
-  padding: 0 250px;
   background-color: white;
+  padding: 0 250px;
 `;
 const LinkClickRow = styled.div`
   display: flex;

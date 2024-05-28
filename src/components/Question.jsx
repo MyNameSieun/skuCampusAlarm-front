@@ -12,7 +12,14 @@ const Question = () => {
             <QuestionBlue type="question">Q</QuestionBlue>
             <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
           </QuestionItem>
-          '
+          <QuestionItem>
+            <QuestionBlue type="question">Q</QuestionBlue>
+            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
+          </QuestionItem>
+          <QuestionItem>
+            <QuestionBlue type="question">Q</QuestionBlue>
+            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
+          </QuestionItem>
         </QuestionBox>
         <QuestionBox>
           <QuestionList>최근 올라온 질문</QuestionList>
@@ -29,7 +36,6 @@ const Question = () => {
 
 const QuestionLayout = styled.div`
   height: 530px;
-  width: 100%;
   background-color: #f5f6f8;
 `;
 const QuestionContainer = styled.div`
@@ -52,10 +58,13 @@ const QuestionBox = styled.div`
 const QuestionList = styled.div`
   font-size: 22px;
   font-weight: bold;
-  padding: 30px 0px 0px 30px;
+  padding: 30px 0px 10px 30px;
 `;
 const QuestionItem = styled.span`
-  padding: 30px 0px 0px 30px;
+  padding: 10px 0px 0px 30px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
 `;
 const QuestionBlue = styled.span`
   color: ${(props) => (props.type === 'question' ? '#3b64e6' : '#000')};
@@ -66,6 +75,7 @@ const QuestionBlue = styled.span`
 
 const Hr = styled.hr`
   border: 0;
+  width: 90%;
   border-top: 1px solid #dfdfdf;
 `;
 

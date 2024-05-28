@@ -11,27 +11,40 @@ const LinkClick = () => {
         <Hr />
         <LinkClickItem>
           <img src="images/skulogo1-img.png" alt="학교 홈" />
-          <div>학교 홈</div>
+          <a href="https://www.sungkyul.ac.kr/skukr/index.do" target="_blank">
+            <div>학교 홈</div>
+          </a>
         </LinkClickItem>
         <Hr />
         <LinkClickItem>
           <img src="/images/사이버캠퍼스.png" alt="사이버캠퍼스" />
-          <div>사이버캠퍼스</div>
+          <a href="https://cc.sungkyul.ac.kr/login.php" target="_blank">
+            <div>사이버캠퍼스</div>
+          </a>
         </LinkClickItem>
         <Hr />
         <LinkClickItem>
           <img src="/images/학술정보관.png" alt="학술정보관" />
-          <div>학술정보관</div>
+          <a href="https://library.sungkyul.ac.kr/" target="_blank">
+            <div>학술정보관</div>
+          </a>
         </LinkClickItem>
         <Hr />
         <LinkClickItem>
           <img src="/images/speaker.png" alt="학사공지" />
-          <div>학사공지</div>
+          <a
+            href="https://www.sungkyul.ac.kr/skukr/343/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGc2t1a3IlMkY5NiUyRmFydGNsTGlzdC5kbyUzRg%3D%3D"
+            target="_blank"
+          >
+            <div>학사공지</div>
+          </a>
         </LinkClickItem>
         <Hr />
         <LinkClickItem>
           <img src="/images/schedule-color.png" alt="학사일정" />
-          <div>학사일정</div>
+          <a href="https://library.sungkyul.ac.kr/" target="_blank">
+            <div>학사일정</div>
+          </a>
         </LinkClickItem>
         <Hr />
       </LinkClickList>

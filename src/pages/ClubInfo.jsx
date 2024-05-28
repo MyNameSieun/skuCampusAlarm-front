@@ -64,8 +64,6 @@ const ClubInfo = () => {
 };
 
 const ClubInfoLayout = styled.div`
-  height: 680px;
-  width: 100%;
   padding: 60px;
 `;
 

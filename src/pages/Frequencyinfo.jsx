@@ -63,9 +63,10 @@ const Frequencyinfo = () => {
 
 const FrequencyinfoLayout = styled.div`
   padding: 60px;
-  height: 370px;
-  width: 100%;
   background-color: #f5f6f8;
+  /* position: absolute;
+  left: 0px;
+  width: 100%; */
 `;
 const FrequencyinfoH1 = styled.h1`
   font-size: 26px;

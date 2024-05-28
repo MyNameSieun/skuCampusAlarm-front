@@ -38,8 +38,6 @@ const UsefulInfo = () => {
   );
 };
 const UsefulInfoLayout = styled.div`
-  height: 530px;
-  width: 100%;
   padding: 60px;
 `;
 
@@ -51,7 +49,6 @@ const UsefulInfoLayoutList = styled.div`
   display: flex;
   justify-content: center;
   gap: 30px;
-
   margin-top: 3rem;
 `;
 const UsefulInfoLayoutItem = styled.div`
@@ -65,9 +62,9 @@ const UsefulInfoLayoutItem = styled.div`
   position: relative;
 `;
 const UsefulInfoItemLogo = styled.img`
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
+  object-fit: contain;
+  width: 50%;
+  height: 50%;
   position: absolute;
   right: 40px;
   bottom: 25px;
