@@ -6,7 +6,6 @@ import Frequencyinfo from 'components/Frequencyinfo';
 import UsefulInfo from 'components/UsefulInfo';
 import Question from 'components/Question';
 import ClubInfo from 'components/ClubInfo';
-import Footer from 'components/common/Footer';
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
       <UsefulInfo />
       <Question />
       <ClubInfo />
-      <Footer />
     </HomeLayout>
   );
 };

@@ -15,7 +15,7 @@ const Navbar = () => {
           <Link to={'/question'}>질문 게시판</Link>
         </NavbarItemRight>
         <NavbarItemRight className="loginSignUp">
-          <Link to={'/login'}>로그인</Link> / <Link to={'/singup'}>회원가입 </Link>
+          <Link to={'/login'}>로그인</Link> / <Link to={'/signup'}>회원가입</Link>
         </NavbarItemRight>
       </NavbarListRight>
     </NavbarLayout>

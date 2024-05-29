@@ -5,11 +5,11 @@ const GlobalStyle = createGlobalStyle`
  ${reset}
   body {
     font-family: "Helvetica", "Arial", sans-serif;
-    background-color:#F5F5F5;
+    background-color:#ffffff;
     height:100vh;
-
   }
   a{text-decoration:none;}
+  a:link { color:black; }
   a:visited { color:black; }
 `;
 
