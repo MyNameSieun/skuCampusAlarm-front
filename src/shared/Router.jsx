@@ -5,6 +5,7 @@ import Login from 'pages/Login';
 import Signup from 'pages/Signup';
 import Navbar from 'components/common/Navbar';
 import QuestionBulletin from 'pages/QuestionBulletin';
+import FrequencyQuestion from 'pages/FrequencyQuestion';
 
 const Router = () => {
   return (
@@ -17,7 +18,8 @@ const Router = () => {
         <Route path="/info/:id" element={<Info />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/QuestionBulletin" element={<QuestionBulletin />} />
+        <Route path="/questionBulletin" element={<QuestionBulletin />} />
+        <Route path="/frequencyQuestion" element={<FrequencyQuestion />} />
       </Routes>
     </BrowserRouter>
   );

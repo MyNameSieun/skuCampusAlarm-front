@@ -1,26 +1,30 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Question = () => {
   return (
     <QuestionLayout>
       <QuestionH1>질문 게시판</QuestionH1>
+
       <QuestionContainer>
-        <QuestionBox>
-          <QuestionList>자주 묻는 질문</QuestionList>
-          <Hr />
-          <QuestionItem>
-            <QuestionBlue type="question">Q</QuestionBlue>
-            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-          </QuestionItem>
-          <QuestionItem>
-            <QuestionBlue type="question">Q</QuestionBlue>
-            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-          </QuestionItem>
-          <QuestionItem>
-            <QuestionBlue type="question">Q</QuestionBlue>
-            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-          </QuestionItem>
-        </QuestionBox>
+        <Link to={'/frequencyQuestion'}>
+          <QuestionBox>
+            <QuestionList>자주 묻는 질문</QuestionList>
+            <Hr />
+            <QuestionItem>
+              <QuestionBlue type="question">Q</QuestionBlue>
+              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
+            </QuestionItem>
+            <QuestionItem>
+              <QuestionBlue type="question">Q</QuestionBlue>
+              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
+            </QuestionItem>
+            <QuestionItem>
+              <QuestionBlue type="question">Q</QuestionBlue>
+              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
+            </QuestionItem>
+          </QuestionBox>
+        </Link>
         <QuestionBox>
           <QuestionList>최근 올라온 질문</QuestionList>
           <Hr />

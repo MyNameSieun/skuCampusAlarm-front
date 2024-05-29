@@ -12,7 +12,7 @@ const Navbar = () => {
       </NavbarListLeft>
       <NavbarListRight>
         <NavbarItemRight className="questionBoard">
-          <Link to={'/question'}>질문 게시판</Link>
+          <Link to={'/frequencyQuestion'}>질문 게시판</Link>
         </NavbarItemRight>
         <NavbarItemRight className="loginSignUp">
           <Link to={'/login'}>로그인</Link> / <Link to={'/signup'}>회원가입</Link>
