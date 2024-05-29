@@ -1,63 +1,117 @@
 import styled from 'styled-components';
 
 const ClubInfo = () => {
+  const withoutInstargram = (e) => {
+    e.preventDefault();
+    alert('동아리 인스타가 존재하지 않습니다.');
+  };
   return (
     <ClubInfoLayout>
       <ClubInfoH2>동아리 인스타 바로가기</ClubInfoH2>
       <ClubInfoH1>
         <ColorBlue>찾고있는 동아리</ColorBlue>가 있으신가요?
       </ClubInfoH1>
-      <ClubInfoAssociation>
-        <img src="images/동아리연합회.jpg" />
-        <span>동아리연합회</span>
-      </ClubInfoAssociation>
+      <a href="https://www.instagram.com/sku_dongari40/" target="_black">
+        <ClubInfoAssociation>
+          <img src="images/동아리연합회.jpg" />
+          <span>동아리연합회</span>
+        </ClubInfoAssociation>
+      </a>
 
       {/* 문화 */}
       <ClubInfoListTitle>문화</ClubInfoListTitle>
       <ClubInfoList>
-        <ClubInfoItem>C.A.S</ClubInfoItem>
+        <a href="https://www.instagram.com/sku_cas/" target="_black">
+          <ClubInfoItem>C.A.S</ClubInfoItem>
+        </a>
       </ClubInfoList>
 
       {/* 학술, 봉사 */}
       <ClubInfoListTitle>학술, 봉사</ClubInfoListTitle>
       <ClubInfoList>
-        <ClubInfoItem>희망선교회</ClubInfoItem>
-        <ClubInfoItem>애드마인</ClubInfoItem>
-        <ClubInfoItem>성결대학교 멋쟁이사자처럼</ClubInfoItem>
+        <a href="https://www.instagram.com/vol_hope/" target="_black">
+          <ClubInfoItem>희망선교회</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sku_admain/" target="_black">
+          <ClubInfoItem>애드마인</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/likelion_sku/" target="_black">
+          <ClubInfoItem>성결대학교 멋쟁이사자처럼</ClubInfoItem>
+        </a>
       </ClubInfoList>
 
       {/* 예능 */}
       <ClubInfoListTitle>예능</ClubInfoListTitle>
       <ClubInfoList>
-        <ClubInfoItem>페가수스</ClubInfoItem>
-        <ClubInfoItem>세인트</ClubInfoItem>
-        <ClubInfoItem>소리하나</ClubInfoItem>
-        <ClubInfoItem>흑심</ClubInfoItem>
-        <ClubInfoItem>소너리스</ClubInfoItem>
-        <ClubInfoItem>뮤직애</ClubInfoItem>
+        <a href="https://www.instagram.com/sku.pegasuss/" target="_black">
+          <ClubInfoItem>페가수스</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/saint__00/" target="_black">
+          <ClubInfoItem>세인트</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sound_1_sorihana/" target="_black">
+          <ClubInfoItem>소리하나</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/blackmind_hs/" target="_black">
+          <ClubInfoItem>흑심</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sonorous_.vocal/" target="_black">
+          <ClubInfoItem>소너리스</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/music_.__._ae/" target="_black">
+          <ClubInfoItem>뮤직애</ClubInfoItem>
+        </a>
       </ClubInfoList>
 
       {/* 체능 */}
       <ClubInfoListTitle>체능</ClubInfoListTitle>
       <ClubInfoList>
-        <ClubInfoItem>성결FC</ClubInfoItem>
-        <ClubInfoItem>S-COCK</ClubInfoItem>
-        <ClubInfoItem>PRESS</ClubInfoItem>
-        <ClubInfoItem>더그아웃</ClubInfoItem>
-        <ClubInfoItem>하랑</ClubInfoItem>
-        <ClubInfoItem>S.T.C</ClubInfoItem>
+        <a href="https://www.instagram.com/sku.fc/" target="_black">
+          <ClubInfoItem>성결FC</ClubInfoItem>
+        </a>
+        {/* S-COCK 인스타 x */}
+        <a href="">
+          <ClubInfoItem onClick={withoutInstargram}>S-COCK</ClubInfoItem>
+        </a>
+        {/* PRESS 인스타 x */}
+        <a href="">
+          <ClubInfoItem onClick={withoutInstargram}>PRESS</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sku.dugout_2019/" target="_black">
+          <ClubInfoItem>더그아웃</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/harang_volleyball/" target="_black">
+          <ClubInfoItem>하랑</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sku_taekwondo_club/" target="_black">
+          <ClubInfoItem>S.T.C</ClubInfoItem>
+        </a>
       </ClubInfoList>
 
       {/* 기독교 */}
       <ClubInfoListTitle>기독교</ClubInfoListTitle>
       <ClubInfoList>
-        <ClubInfoItem>산돌찬양선교단</ClubInfoItem>
-        <ClubInfoItem>예수전도단</ClubInfoItem>
-        <ClubInfoItem>시와찬미 산양선교단</ClubInfoItem>
-        <ClubInfoItem>주사랑음악선교단</ClubInfoItem>
-        <ClubInfoItem>마르튀스 선교단</ClubInfoItem>
-        <ClubInfoItem>애양선교회</ClubInfoItem>
-        <ClubInfoItem>CCC</ClubInfoItem>
+        <a href="https://www.instagram.com/sku_livingstone/" target="_black">
+          <ClubInfoItem>산돌찬양선교단</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/sku_ywam/" target="_black">
+          <ClubInfoItem>예수전도단</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/psalms.and.hymn/" target="_black">
+          <ClubInfoItem>시와찬미 산양선교단</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/jusarang_1988/" target="_black">
+          <ClubInfoItem>주사랑음악선교단</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/martus_mission/" target="_black">
+          <ClubInfoItem>마르튀스 선교단</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/aeyang_ministry/" target="_black">
+          <ClubInfoItem>애양선교회</ClubInfoItem>
+        </a>
+        <a href="https://www.instagram.com/skuccc_/" target="_black">
+          <ClubInfoItem>CCC</ClubInfoItem>
+        </a>
       </ClubInfoList>
     </ClubInfoLayout>
   );

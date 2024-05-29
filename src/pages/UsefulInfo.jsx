@@ -1,12 +1,14 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const UsefulInfo = () => {
+  const navigate = useNavigate();
   return (
     <UsefulInfoLayout>
       <UsefulInfoH1>유용한정보</UsefulInfoH1>
 
       <UsefulInfoLayoutList>
-        <UsefulInfoLayoutItem>
+        <UsefulInfoLayoutItem onClick={() => navigate('/Info')}>
           <UsefulInfoItemText>졸업학점 계산기</UsefulInfoItemText>
           <UsefulInfoItemLogo src="images/3d-calculator.png" />
         </UsefulInfoLayoutItem>
@@ -19,7 +21,6 @@ const UsefulInfo = () => {
           <UsefulInfoItemLogo src="images/idea.png" />
         </UsefulInfoLayoutItem>
       </UsefulInfoLayoutList>
-
       <UsefulInfoLayoutList>
         <UsefulInfoLayoutItem>
           <UsefulInfoItemText>추천 어플</UsefulInfoItemText>
@@ -60,6 +61,7 @@ const UsefulInfoLayoutItem = styled.div`
   font-weight: bold;
   padding: 30px 0 0 30px;
   position: relative;
+  cursor: pointer;
 `;
 const UsefulInfoItemLogo = styled.img`
   object-fit: contain;

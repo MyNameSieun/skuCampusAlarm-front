@@ -1,16 +1,20 @@
-import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <NavbarLayout>
       <NavbarListLeft>
-        <img src="images/skuAlarmLogo.png" alt="캠퍼스알리미 로고" />
-        <NavbarItemLeft>SKU 캠퍼스알리미</NavbarItemLeft>
+        <StyledLink to={'/home'}>
+          <img src="images/skuAlarmLogo.png" alt="캠퍼스알리미 로고" />
+          <NavbarItemLeft>SKU 캠퍼스알리미</NavbarItemLeft>
+        </StyledLink>
       </NavbarListLeft>
       <NavbarListRight>
         <NavbarItemRight className="questionBoard">질문 게시판</NavbarItemRight>
-        <NavbarItemRight className="loginSignUp">로그인 / 회원가입</NavbarItemRight>
+        <NavbarItemRight className="loginSignUp">
+          <Link to={'/login'}>로그인</Link> / <Link to={'/singup'}>회원가입 </Link>
+        </NavbarItemRight>
       </NavbarListRight>
     </NavbarLayout>
   );
@@ -34,6 +38,10 @@ const NavbarListLeft = styled.ul`
     height: 60px;
     margin-right: 20px;
   }
+`;
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
 `;
 
 const NavbarItemLeft = styled.li`
