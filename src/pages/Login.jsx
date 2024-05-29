@@ -1,7 +1,9 @@
-import React from 'react';
+import styled from 'styled-components';
 
 const Login = () => {
-  return <div></div>;
+  return <LoginLayout></LoginLayout>;
 };
 
 export default Login;
+
+const LoginLayout = styled.div``;

@@ -11,7 +11,9 @@ const Navbar = () => {
         </StyledLink>
       </NavbarListLeft>
       <NavbarListRight>
-        <NavbarItemRight className="questionBoard">질문 게시판</NavbarItemRight>
+        <NavbarItemRight className="questionBoard">
+          <Link to={'/question'}>질문 게시판</Link>
+        </NavbarItemRight>
         <NavbarItemRight className="loginSignUp">
           <Link to={'/login'}>로그인</Link> / <Link to={'/singup'}>회원가입 </Link>
         </NavbarItemRight>
@@ -25,6 +27,8 @@ const NavbarLayout = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 35px 0;
+  padding: 30px 250px;
+  background-color: white;
 `;
 
 const NavbarListLeft = styled.ul`

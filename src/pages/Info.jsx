@@ -1,5 +1,4 @@
 import MoreInfo from 'components/MoreInfo';
-import Navbar from 'components/common/Navbar';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,14 +6,13 @@ const Info = () => {
   const navigate = useNavigate();
   return (
     <InfoLayout>
-      <Navbar />
       <InfoBox>
         <InfoImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
         <InfoText>유용한 정보 /</InfoText>
         <InfoTextSub>졸업학점 계산기</InfoTextSub>
       </InfoBox>
       <InfoParagraph>
-        졸업학점 계산기란 성결대 멋쟁이사자처럼 성결대 11기가 제작했으며,
+        졸업학점 계산기란 성결대 멋쟁이사자처럼이 제작하였으며,
         <br /> 성결대학교 학생을 대상으로 졸업 학점을 간편하게 계산할 수 있는 서비스 입니다.
         <br /> <br />
         파일 업로드 하나로 졸업 학점을 간편하게 확인할 수 있습니다.
