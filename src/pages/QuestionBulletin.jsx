@@ -2,6 +2,7 @@ import QuestionSearch from 'components/QuestionSearch';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import postJson from 'post.json';
+import { Link } from 'react-router-dom';
 
 const QuestionBulletin = () => {
   const navigate = useNavigate();
@@ -19,20 +20,22 @@ const QuestionBulletin = () => {
       <QuestionSearch />
       {postJson.map((item) => {
         return (
-          <QusitonList>
-            <QustionTitle>{item.title}</QustionTitle>
-            <QustionItem>
-              <QusitonLeft>
-                <QustionContent>{item.content}</QustionContent>
-              </QusitonLeft>
-              <QustionRight>
-                <QustionTime>{item.time}</QustionTime>
-                <img src="images/comment.png" />
-                <QustionComment>3개</QustionComment>
-              </QustionRight>
-            </QustionItem>
-            <Hr />
-          </QusitonList>
+          <Link to={'/questionbulletindetaill'}>
+            <QusitonList>
+              <QustionTitle>{item.title}</QustionTitle>
+              <QustionItem>
+                <QusitonLeft>
+                  <QustionContent>{item.content}</QustionContent>
+                </QusitonLeft>
+                <QustionRight>
+                  <QustionTime>{item.time}</QustionTime>
+                  <img src="images/comment.png" />
+                  <QustionComment>3개</QustionComment>
+                </QustionRight>
+              </QustionItem>
+              <Hr />
+            </QusitonList>
+          </Link>
         );
       })}
     </QuestionLayout>
@@ -93,6 +96,7 @@ const QuestionButtonImage = styled.img`
 const QusitonList = styled.ul`
   margin-left: 30px;
   margin-top: 1.5rem;
+  cursor: pointer;
 `;
 const QustionItem = styled.li`
   display: flex;

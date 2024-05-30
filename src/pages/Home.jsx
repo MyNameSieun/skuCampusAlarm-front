@@ -24,11 +24,11 @@ const Home = () => {
 };
 const HomeLayout = styled.div`
   background-color: white;
-  padding: 0 250px;
 `;
 const LinkClickRow = styled.div`
   display: flex;
-  gap: 50px;
+  padding: 0 100px;
+  gap: 20px;
 `;
 
 export default Home;

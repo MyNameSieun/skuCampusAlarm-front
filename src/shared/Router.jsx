@@ -6,6 +6,7 @@ import Signup from 'pages/Signup';
 import Navbar from 'components/common/Navbar';
 import QuestionBulletin from 'pages/QuestionBulletin';
 import FrequencyQuestion from 'pages/FrequencyQuestion';
+import QuestionBulletinDetaill from 'pages/QuestionBulletinDetaill';
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/questionBulletin" element={<QuestionBulletin />} />
         <Route path="/frequencyQuestion" element={<FrequencyQuestion />} />
+        <Route path="/questionbulletindetaill" element={<QuestionBulletinDetaill />} />
       </Routes>
     </BrowserRouter>
   );
