@@ -119,6 +119,7 @@ const ClubInfo = () => {
 
 const ClubInfoLayout = styled.div`
   padding: 60px;
+  margin: 0 200px;
 `;
 
 const ClubInfoH1 = styled.h1`

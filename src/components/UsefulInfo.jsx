@@ -58,6 +58,7 @@ const UsefulInfoLayout = styled.div`
 const UsefulInfoH1 = styled.h1`
   font-size: 26px;
   font-weight: bold;
+  margin: 0 200px;
 `;
 const UsefulInfoLayoutList = styled.div`
   display: flex;

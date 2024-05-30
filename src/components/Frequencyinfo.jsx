@@ -64,14 +64,12 @@ const Frequencyinfo = () => {
 const FrequencyinfoLayout = styled.div`
   padding: 60px;
   background-color: #f5f6f8;
-  /* position: absolute;
-  left: 0px;
-  width: 100%; */
 `;
 const FrequencyinfoH1 = styled.h1`
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 30px;
+  margin: 0 200px;
 `;
 const FrequencyinfoList = styled.ul`
   display: flex;

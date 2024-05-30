@@ -51,6 +51,7 @@ const QuestionH1 = styled.h1`
   font-size: 26px;
   font-weight: bold;
   padding: 60px;
+  margin: 0 200px;
 `;
 const QuestionBox = styled.div`
   background-color: white;
