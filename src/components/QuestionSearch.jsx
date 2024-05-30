@@ -30,6 +30,7 @@ const QuestionSearchInput = styled.input`
   color: #464646;
   height: 70px;
   margin-left: 30px;
+  margin-bottom: 2rem;
   padding-left: 5rem;
   border-radius: 8px;
   &::placeholder {

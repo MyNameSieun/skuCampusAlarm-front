@@ -1,5 +1,7 @@
+import QuestionSearch from 'components/QuestionSearch';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import postJson from 'post.json';
 
 const QuestionBulletin = () => {
   const navigate = useNavigate();
@@ -9,31 +11,118 @@ const QuestionBulletin = () => {
       <QuestionBox>
         <QuestionImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
         <QuestionText>질문 게시판</QuestionText>
+        <QustionButtonBox>
+          <QuestionButtonImage src="images/pencil.png" />
+          <QuestionButton>질문하기</QuestionButton>
+        </QustionButtonBox>
       </QuestionBox>
-      <QuestionInputBox>
-        <QuestionSearchImage src="images/search.png" />
-        <QuestionInput placeholder="질문을 검색해보세요!" />
-      </QuestionInputBox>
+      <QuestionSearch />
+      {postJson.map((item) => {
+        return (
+          <QusitonList>
+            <QustionTitle>{item.title}</QustionTitle>
+            <QustionItem>
+              <QusitonLeft>
+                <QustionContent>{item.content}</QustionContent>
+              </QusitonLeft>
+              <QustionRight>
+                <QustionTime>{item.time}</QustionTime>
+                <img src="images/comment.png" />
+                <QustionComment>3개</QustionComment>
+              </QustionRight>
+            </QustionItem>
+            <Hr />
+          </QusitonList>
+        );
+      })}
     </QuestionLayout>
   );
 };
 
 export default QuestionBulletin;
 
-const QuestionLayout = styled.div``;
-const QuestionBox = styled.div``;
-const QuestionImage = styled.img``;
-const QuestionText = styled.div``;
-const QuestionInputBox = styled.div``;
-const QuestionSearchImage = styled.img``;
-const QuestionInput = styled.input`
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 18px;
-  color: #464646;
-  margin-left: 30px;
-  &::placeholder {
-    color: #999999;
+const QuestionLayout = styled.div`
+  padding: 0 250px;
+  height: 110vh;
+  background-color: white;
+`;
+const QuestionBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const QuestionImage = styled.img`
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+`;
+const QuestionText = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 10px;
+`;
+
+const QustionButtonBox = styled.div`
+  position: absolute;
+  right: 15.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b64e6;
+  border-radius: 5px;
+  width: 125px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  &:hover {
+    background-color: #233f9a;
   }
+`;
+const QuestionButton = styled.span`
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+`;
+const QuestionButtonImage = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+`;
+
+const QusitonList = styled.ul`
+  margin-left: 30px;
+  margin-top: 1.5rem;
+`;
+const QustionItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  color: #8b8b8b;
+  font-size: 16px;
+`;
+const QusitonLeft = styled.div``;
+const QustionRight = styled.div`
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  img {
+    margin-left: 1rem;
+    height: 19px;
+  }
+`;
+
+const QustionTitle = styled.div`
+  color: #464646;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 13px;
+`;
+
+const QustionContent = styled.div``;
+const QustionTime = styled.div``;
+const QustionComment = styled.div``;
+const Hr = styled.hr`
+  border: 0;
+  border: 1px solid #dfdfdf;
+  margin-top: 1.5rem;
 `;
