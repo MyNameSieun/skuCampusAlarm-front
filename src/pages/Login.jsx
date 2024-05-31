@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Login = () => {
@@ -10,7 +11,13 @@ const Login = () => {
       </LoginInput>
       <LoginButon>로그인</LoginButon>
       <LoginBox>
-        <LoginBoxSubText>회원가입 | 아이디 찾기 | 비밀번호 찾기</LoginBoxSubText>
+        <LoginBoxSubText>
+          <Link to="/register">회원가입</Link>
+          <span>|</span>
+          <Link to="/login">아이디 찾기</Link>
+          <span>|</span>
+          <Link to="/login">비밀번호 찾기</Link>
+        </LoginBoxSubText>
       </LoginBox>
       <LoginText>
         <Hr />
@@ -84,6 +91,9 @@ const LoginBoxSubText = styled.span`
   justify-content: center;
   color: #464646;
   padding: 2rem;
+  span {
+    padding: 0 12px;
+  }
 `;
 
 const LoginText = styled.span`
