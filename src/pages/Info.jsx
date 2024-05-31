@@ -1,10 +1,11 @@
 import MoreInfo from 'components/MoreInfo';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import info from 'info.json';
 
 const Info = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   return (
     <InfoLayout>
@@ -13,20 +14,21 @@ const Info = () => {
         <InfoText>유용한 정보 /</InfoText>
       </InfoBox>
       <TextContent>
-        {info.map((item) => {
-          return (
-            <div key={item.id}>
-              <InfoTextSub>{item.textsub}</InfoTextSub>
-              <TextContent>{item.textContent}</TextContent>
-            </div>
-          );
-        })}
-
-        <InfoLink>
-          <a href="https://gcc.sku-sku.com/" target="_blank">
-            [ 졸업학점 계산기 사용하기↗️ ]
-          </a>
-        </InfoLink>
+        {info
+          .filter((item) => item.id === parseInt(id))
+          .map((item) => {
+            return (
+              <div key={item.id}>
+                <InfoTextSub>{item.textsub}</InfoTextSub>
+                <TextContent>{item.textContent}</TextContent>
+                <InfoLink>
+                  <a href={item.infoLink} target="_blank">
+                    [ {item.infoTitle}↗️ ]
+                  </a>
+                </InfoLink>
+              </div>
+            );
+          })}
       </TextContent>
       <Hr />
       <MoreInfo />
@@ -38,7 +40,6 @@ export default Info;
 
 const InfoLayout = styled.div`
   padding: 0 250px;
-  height: 110vh;
   background-color: white;
 `;
 const InfoBox = styled.div`

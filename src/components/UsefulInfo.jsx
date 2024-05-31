@@ -4,49 +4,30 @@ import info from 'info.json';
 
 const UsefulInfo = () => {
   const navigate = useNavigate();
+
   return (
     <UsefulInfoLayout>
       <UsefulInfoH1>유용한정보</UsefulInfoH1>
 
       <UsefulInfoLayoutList>
-        <UsefulInfoLayoutItem onClick={() => navigate('/info')}>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>졸업학점 계산기</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/3d-calculator.png" />
+        {info.slice(0, 3).map((item) => (
+          <Link to={`/info/${item.id}`}>
+            <UsefulInfoLayoutItem key={item.id}>
+              <UsefulInfoItemText>{item.textsub}</UsefulInfoItemText>
+              <UsefulInfoItemLogo src={item.infoImage} alt={item.textsub} />
+            </UsefulInfoLayoutItem>
           </Link>
-        </UsefulInfoLayoutItem>
-        <UsefulInfoLayoutItem>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>학교 근처 맛집</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/udon.png" />
-          </Link>
-        </UsefulInfoLayoutItem>
-        <UsefulInfoLayoutItem>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>수강신청 팁</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/idea.png" />
-          </Link>
-        </UsefulInfoLayoutItem>
+        ))}
       </UsefulInfoLayoutList>
       <UsefulInfoLayoutList>
-        <UsefulInfoLayoutItem>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>추천 어플</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/development.png" />
+        {info.slice(3, 6).map((item) => (
+          <Link to={`/info/${item.id}`}>
+            <UsefulInfoLayoutItem key={item.id}>
+              <UsefulInfoItemText>{item.textsub}</UsefulInfoItemText>
+              <UsefulInfoItemLogo src={item.infoImage} alt={item.textsub} />
+            </UsefulInfoLayoutItem>
           </Link>
-        </UsefulInfoLayoutItem>
-        <UsefulInfoLayoutItem>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>영커 교재 사용법</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/book.png" />
-          </Link>
-        </UsefulInfoLayoutItem>
-        <UsefulInfoLayoutItem>
-          <Link to={`/info/${info.id}`}>
-            <UsefulInfoItemText>논문 보는법</UsefulInfoItemText>
-            <UsefulInfoItemLogo src="images/dissertation.png" />
-          </Link>
-        </UsefulInfoLayoutItem>
+        ))}
       </UsefulInfoLayoutList>
     </UsefulInfoLayout>
   );

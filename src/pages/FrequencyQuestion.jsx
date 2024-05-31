@@ -28,7 +28,9 @@ const FrequencyQuestion = () => {
             <FrequencyQuestionQ>
               <FrequencyColorBlue>Q</FrequencyColorBlue>
               {item.question}
-              <FrequencyArrow src="images/leftArrow.png" onClick={() => toggleShow(item.id)} />
+
+              {/* toggle 상태를 FrequencyArrow에 전달 */}
+              <FrequencyArrow src="images/leftArrow.png" onClick={() => toggleShow(item.id)} toggle={toggle[item.id]} />
             </FrequencyQuestionQ>
             {toggle[item.id] && (
               <FrequencyQuestionA>
@@ -91,10 +93,11 @@ const FrequencyColorBlue = styled.div`
   padding: 0 30px;
   font-size: 20px;
 `;
+// FrequencyArrow에 toggle prop을 추가하고 스타일을 동적으로 적용
 const FrequencyArrow = styled.img`
   width: 27px;
   display: flex;
-  transform: ${(props) => (props.toggle ? 'rotate(180deg)' : 'rotate(90deg)')};
+  transform: ${(props) => (props.toggle ? 'rotate(270deg)' : 'rotate(90deg)')};
   position: absolute;
   right: 17rem;
   cursor: pointer;
