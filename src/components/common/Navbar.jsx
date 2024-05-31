@@ -26,8 +26,7 @@ const NavbarLayout = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0;
-  padding: 30px 250px;
+  padding: 30px 200px;
   background-color: white;
 `;
 

@@ -1,19 +1,25 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import info from 'info.json';
+
 const MoreInfo = () => {
   const navigate = useNavigate();
   return (
     <MoreInfoLayout>
       <MoreInfoH1>더 궁금한 정보가 있으신가요?</MoreInfoH1>
       <MoreInfoList>
-        <MoreItem onClick={() => navigate('/Info')}>졸업학점 계산기</MoreItem>
-        <MoreItem>학교 근처 맛집</MoreItem>
-        <MoreItem>추천 어플</MoreItem>
+        {info.slice(0, 3).map((item) => (
+          <Link to={`/info/${item.id}`}>
+            <MoreItem onClick={() => navigate('/Info')}>{item.textsub}</MoreItem>
+          </Link>
+        ))}
       </MoreInfoList>
       <MoreInfoList>
-        <MoreItem>영커 교재 사용법</MoreItem>
-        <MoreItem>소프트웨어 대여</MoreItem>
-        <MoreItem>수강신청 팁</MoreItem>
+        {info.slice(3, 6).map((item) => (
+          <Link to={`/info/${item.id}`}>
+            <MoreItem onClick={() => navigate('/Info')}>{item.textsub}</MoreItem>
+          </Link>
+        ))}
       </MoreInfoList>
     </MoreInfoLayout>
   );

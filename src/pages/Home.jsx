@@ -27,8 +27,8 @@ const HomeLayout = styled.div`
 `;
 const LinkClickRow = styled.div`
   display: flex;
-  padding: 0 100px;
-  gap: 20px;
+  justify-content: center;
+  gap: 4rem;
 `;
 
 export default Home;

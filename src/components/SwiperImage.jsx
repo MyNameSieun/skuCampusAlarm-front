@@ -38,15 +38,14 @@ const SwiperImage = () => {
 };
 
 const SwiperImageContainer = styled(Swiper)`
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
+  width: 60%;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
 `;
 
 const StyledImage = styled.img`
-  margin-left: 55px;
-  width: 90%;
-  height: 100%;
+  width: 100%;
   object-fit: contain;
 `;
 

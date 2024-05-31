@@ -9,17 +9,17 @@ const Info = () => {
 
   return (
     <InfoLayout>
-      <InfoBox>
-        <InfoImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
-        <InfoText>유용한 정보 /</InfoText>
-      </InfoBox>
       <TextContent>
         {info
           .filter((item) => item.id === parseInt(id))
           .map((item) => {
             return (
               <div key={item.id}>
-                <InfoTextSub>{item.textsub}</InfoTextSub>
+                <InfoBox>
+                  <InfoImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
+                  <InfoText>유용한 정보 /</InfoText>
+                  <InfoTextSub>{item.textsub}</InfoTextSub>
+                </InfoBox>
                 <TextContent>{item.textContent}</TextContent>
                 <InfoLink>
                   <a href={item.infoLink} target="_blank">
@@ -56,6 +56,7 @@ const InfoText = styled.span`
   font-size: 32px;
   font-weight: bold;
   margin-right: 10px;
+  color: black;
 `;
 const InfoTextSub = styled.span`
   font-size: 24px;
