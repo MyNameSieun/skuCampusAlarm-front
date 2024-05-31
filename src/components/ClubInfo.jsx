@@ -13,7 +13,7 @@ const ClubInfo = () => {
       </ClubInfoH1>
       <a href="https://www.instagram.com/sku_dongari40/" target="_black">
         <ClubInfoAssociation>
-          <img src="images/동아리연합회.jpg" />
+          <img src="/images/동아리연합회.jpg" />
           <span>동아리연합회</span>
         </ClubInfoAssociation>
       </a>

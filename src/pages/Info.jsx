@@ -16,7 +16,7 @@ const Info = () => {
             return (
               <div key={item.id}>
                 <InfoBox>
-                  <InfoImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
+                  <InfoImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
                   <InfoText>유용한 정보 /</InfoText>
                   <InfoTextSub>{item.textsub}</InfoTextSub>
                 </InfoBox>

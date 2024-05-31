@@ -4,7 +4,7 @@ const QuestionSearch = () => {
   return (
     <QuestionSearchLayout>
       <QuestionSearchInputBox>
-        <QuestionSearchSearchImage src="images/search.png" />
+        <QuestionSearchSearchImage src="/images/search.png" />
         <QuestionSearchInput placeholder="질문을 검색해보세요!" />
       </QuestionSearchInputBox>
     </QuestionSearchLayout>

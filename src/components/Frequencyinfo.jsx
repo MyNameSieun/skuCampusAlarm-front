@@ -7,53 +7,53 @@ const Frequencyinfo = () => {
 
       <FrequencyinfoList>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/school.png" />
+          <FrequencyinfoItemLogo src="/images/school.png" />
           <FrequencyinfoItemText>학교건물</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/bus.png" />
+          <FrequencyinfoItemLogo src="/images/bus.png" />
           <FrequencyinfoItemText>셔틀버스</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/schedule.png" />
+          <FrequencyinfoItemLogo src="/images/schedule.png" />
           <FrequencyinfoItemText>교시 별 시간</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/food-tray.png" />
+          <FrequencyinfoItemLogo src="/images/food-tray.png" />
           <FrequencyinfoItemText>학식 정보</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/digital-library.png" />
+          <FrequencyinfoItemLogo src="/images/digital-library.png" />
           <FrequencyinfoItemText>학술정보관 정보</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/contact-book.png" />
+          <FrequencyinfoItemLogo src="/images/contact-book.png" />
           <FrequencyinfoItemText>학부/학과 연락처</FrequencyinfoItemText>
         </FrequencyinfoItem>
       </FrequencyinfoList>
       <FrequencyinfoList>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/student-grades.png" />
+          <FrequencyinfoItemLogo src="/images/student-grades.png" />
           <FrequencyinfoItemText>최저이수 학점표</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/office.png" />
+          <FrequencyinfoItemLogo src="/images/office.png" />
           <FrequencyinfoItemText>오피스 설치</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/quality-control.png" />
+          <FrequencyinfoItemLogo src="/images/quality-control.png" />
           <FrequencyinfoItemText>카피킬러 사용</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/wifi.png" />
+          <FrequencyinfoItemLogo src="/images/wifi.png" />
           <FrequencyinfoItemText>와이파이 연결 </FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/percentage-graph.png" />
+          <FrequencyinfoItemLogo src="/images/percentage-graph.png" />
           <FrequencyinfoItemText>학점 비율</FrequencyinfoItemText>
         </FrequencyinfoItem>
         <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="images/scholarship.png" />
+          <FrequencyinfoItemLogo src="/images/scholarship.png" />
           <FrequencyinfoItemText>장학금</FrequencyinfoItemText>
         </FrequencyinfoItem>
       </FrequencyinfoList>

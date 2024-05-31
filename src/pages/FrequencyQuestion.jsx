@@ -18,7 +18,7 @@ const FrequencyQuestion = () => {
   return (
     <FrequencyLayout>
       <FrequencyBox>
-        <FrequencyImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
+        <FrequencyImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
         <FrequencyText>자주 묻는 질문</FrequencyText>
       </FrequencyBox>
       <QuestionSearch />
@@ -30,7 +30,11 @@ const FrequencyQuestion = () => {
               {item.question}
 
               {/* toggle 상태를 FrequencyArrow에 전달 */}
-              <FrequencyArrow src="images/leftArrow.png" onClick={() => toggleShow(item.id)} toggle={toggle[item.id]} />
+              <FrequencyArrow
+                src="/images/leftArrow.png"
+                onClick={() => toggleShow(item.id)}
+                toggle={toggle[item.id]}
+              />
             </FrequencyQuestionQ>
             {toggle[item.id] && (
               <FrequencyQuestionA>

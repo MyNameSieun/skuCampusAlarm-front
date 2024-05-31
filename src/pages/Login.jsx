@@ -19,11 +19,11 @@ const Login = () => {
       </LoginText>
       <LoginBox>
         <LoginItem type="kakao">
-          <LoginImage src="images/kakao-talk.png" />
+          <LoginImage src="/images/kakao-talk.png" />
           카카오 로그인
         </LoginItem>
         <LoginItem>
-          <LoginImage src="images/naverLogo.png" />
+          <LoginImage src="/images/naverLogo.png" />
           네이버 로그인
         </LoginItem>
       </LoginBox>

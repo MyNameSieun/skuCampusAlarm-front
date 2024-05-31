@@ -29,7 +29,7 @@ const QuestionBulletin = () => {
                 </QusitonLeft>
                 <QustionRight>
                   <QustionTime>{item.time}</QustionTime>
-                  <img src="images/comment.png" />
+                  <img src="/images/comment.png" />
                   <QustionComment>3개</QustionComment>
                 </QustionRight>
               </QustionItem>

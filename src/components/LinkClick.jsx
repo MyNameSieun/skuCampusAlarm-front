@@ -11,7 +11,7 @@ const LinkClick = () => {
         <Hr />
         <a href="https://www.sungkyul.ac.kr/skukr/index.do" target="_blank">
           <LinkClickItem>
-            <img src="images/skulogo1-img.png" alt="학교 홈" />
+            <img src="/images/skulogo1-img.png" alt="학교 홈" />
             <div>학교 홈</div>
           </LinkClickItem>
         </a>

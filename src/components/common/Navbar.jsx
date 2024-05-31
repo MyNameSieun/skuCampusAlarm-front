@@ -6,7 +6,7 @@ const Navbar = () => {
     <NavbarLayout>
       <NavbarListLeft>
         <StyledLink to={'/home'}>
-          <img src="images/skuAlarmLogo.png" alt="캠퍼스알리미 로고" />
+          <img src="/images/skuAlarmLogo.png" alt="캠퍼스알리미 로고" />
           <NavbarItemLeft>SKU 캠퍼스알리미</NavbarItemLeft>
         </StyledLink>
       </NavbarListLeft>

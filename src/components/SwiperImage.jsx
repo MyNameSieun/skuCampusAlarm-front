@@ -28,10 +28,22 @@ const SwiperImage = () => {
       speed={900} // 슬라이드 전환 속도 (밀리초)
     >
       <SwiperSlide>
-        <StyledImage src="images/캐러셀3.png" />
+        <a
+          href="https://www.sungkyul.ac.kr/skukr/342/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGc2t1a3IlMkY5NyUyRjM0NDE2JTJGYXJ0Y2xWaWV3LmRvJTNG"
+          alt="캐러셀1"
+          target="_blank"
+        >
+          <StyledImage src="/images/캐러셀1.png" />
+        </a>
       </SwiperSlide>
       <SwiperSlide>
-        <StyledImage src="images/캐러셀2.jpg" />
+        <a
+          href="https://www.sungkyul.ac.kr/skukr/342/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGc2t1a3IlMkY5NyUyRjM0MzkzJTJGYXJ0Y2xWaWV3LmRvJTNGaXNWaWV3TWluZSUzRGZhbHNlJTI2YmJzQ2xTZXElM0QlMjZzcmNoV3JkJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZwYWdlJTNEMSUyNmJic09wZW5XcmRTZXElM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNnNyY2hDb2x1bW4lM0QlMjZwYXNzd29yZCUzRCUyNg%3D%3D"
+          alt="캐러셀2"
+          target="_blank"
+        >
+          <StyledImage src="/images/캐러셀2.jpg" />
+        </a>
       </SwiperSlide>
     </SwiperImageContainer>
   );
