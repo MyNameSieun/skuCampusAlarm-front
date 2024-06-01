@@ -5,8 +5,8 @@ import Login from 'pages/Login';
 import Navbar from 'components/common/Navbar';
 import QuestionBulletin from 'pages/QuestionBulletin';
 import FrequencyQuestion from 'pages/FrequencyQuestion';
-import QuestionBulletinDetaill from 'pages/QuestionBulletinDetaill';
 import Register from 'pages/Register';
+import QuestionDetail from 'pages/QuestionDetail';
 
 const Router = () => {
   return (
@@ -18,8 +18,8 @@ const Router = () => {
         <Route path="/info/:id" element={<Info />} />
         <Route path="/login" element={<Login />} />
         <Route path="/questionBulletin" element={<QuestionBulletin />} />
+        <Route path="/questionDetail/:id" element={<QuestionDetail />} />
         <Route path="/frequencyQuestion" element={<FrequencyQuestion />} />
-        <Route path="/questionbulletindetaill" element={<QuestionBulletinDetaill />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

@@ -33,7 +33,7 @@ const SwiperImage = () => {
           alt="캐러셀1"
           target="_blank"
         >
-          <StyledImage src="/images/캐러셀1.png" />
+          <StyledImage src="/images/캐러셀1.jpg" />
         </a>
       </SwiperSlide>
       <SwiperSlide>
@@ -42,7 +42,12 @@ const SwiperImage = () => {
           alt="캐러셀2"
           target="_blank"
         >
-          <StyledImage src="/images/캐러셀2.jpg" />
+          <StyledImage src="/images/캐러셀2.png" />
+        </a>
+      </SwiperSlide>
+      <SwiperSlide>
+        <a href="https://www.youtube.com/watch?v=qQU7cquSmGU" alt="캐러셀3" target="_blank">
+          <StyledImage src="/images/캐러셀3.png" />
         </a>
       </SwiperSlide>
     </SwiperImageContainer>
@@ -50,14 +55,16 @@ const SwiperImage = () => {
 };
 
 const SwiperImageContainer = styled(Swiper)`
-  width: 60%;
+  width: 50%;
+  height: 100%;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   margin: 0;
 `;
 
 const StyledImage = styled.img`
   width: 100%;
+  height: 100%;
   object-fit: contain;
 `;
 

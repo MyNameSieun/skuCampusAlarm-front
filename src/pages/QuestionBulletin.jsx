@@ -10,17 +10,17 @@ const QuestionBulletin = () => {
   return (
     <QuestionLayout>
       <QuestionBox>
-        <QuestionImage src="images/leftArrow.png" onClick={() => navigate(-1)} />
+        <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
         <QuestionText>질문 게시판</QuestionText>
         <QustionButtonBox>
-          <QuestionButtonImage src="images/pencil.png" />
+          <QuestionButtonImage src="/images/pencil.png" />
           <QuestionButton>질문하기</QuestionButton>
         </QustionButtonBox>
       </QuestionBox>
       <QuestionSearch />
       {postJson.map((item) => {
         return (
-          <Link to={'/questionbulletindetaill'}>
+          <Link to={`/questionDetail/${item.id}`} key={item.id}>
             <QusitonList>
               <QustionTitle>{item.title}</QustionTitle>
               <QustionItem>

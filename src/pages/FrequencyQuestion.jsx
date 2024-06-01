@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const FrequencyQuestion = () => {
   const navigate = useNavigate();
+
   const [toggle, setToggle] = useState({});
   const toggleShow = (id) => {
     //  prev는 업데이트 이전의 toggles 상태를 나타냄

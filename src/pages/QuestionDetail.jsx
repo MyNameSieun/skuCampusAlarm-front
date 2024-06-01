@@ -1,0 +1,159 @@
+import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import postJson from 'post.json';
+import Comments from 'components/Comments';
+
+const QuestionDetail = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  return (
+    <QuestionLayout>
+      <QuestionBox>
+        <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
+        <QuestionText>질문 게시판</QuestionText>
+      </QuestionBox>
+
+      {postJson
+        .filter((item) => item.id === parseInt(id))
+        .map((item) => {
+          return (
+            <QusitonList key={item.id}>
+              <QustionItem>
+                <QusitonImage src={item.avatar} alt="아바타이미지" />
+                <QuestionNickname>{item.nickname}</QuestionNickname>
+              </QustionItem>
+              <QuestionTitle>{item.title}</QuestionTitle>
+              <QuestionContent>{item.content}</QuestionContent>
+              <QustionBox>
+                <img src="/images/comment.png" />
+                <QustionComment>3개</QustionComment>
+                <QustionTime>{item.time}</QustionTime>
+              </QustionBox>
+              <Hr />
+              <QustionCommentInputLayout>
+                <QustionCommentInputButton>등록</QustionCommentInputButton>
+                <QustionCommentInput placeholder="댓글 작성" />
+                <QustionCommentInputIcon src="/images/search-white.png" alt="search-white" />
+              </QustionCommentInputLayout>
+            </QusitonList>
+          );
+        })}
+      <Comments />
+      <CommentsListButton>글 목록</CommentsListButton>
+    </QuestionLayout>
+  );
+};
+
+export default QuestionDetail;
+
+const QuestionLayout = styled.div`
+  padding: 0 250px;
+  height: 110vh;
+  background-color: white;
+`;
+const QuestionBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const QuestionImage = styled.img`
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+`;
+const QuestionText = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 10px;
+`;
+
+const QuestionNickname = styled.div`
+  font-size: 20px;
+`;
+const QuestionTitle = styled.div`
+  margin-top: 1.4rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #464646;
+`;
+const QuestionContent = styled.div`
+  margin-top: 1.2rem;
+  font-size: 16px;
+  color: #4a4747;
+`;
+const QusitonList = styled.ul`
+  margin-left: 30px;
+  margin-top: 1.5rem;
+`;
+const QustionItem = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+const QusitonImage = styled.img`
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+`;
+const Hr = styled.hr`
+  border: 1px solid #dfdfdf;
+`;
+const QustionBox = styled.div`
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  color: #8b8b8b;
+  img {
+    height: 19px;
+  }
+`;
+const QustionTime = styled.div``;
+
+const QustionComment = styled.div`
+  margin-right: 1rem;
+`;
+// 댓글작성 input
+const QustionCommentInputLayout = styled.div`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin: 60px auto;
+  border: 1px solid #5c5c5c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+const QustionCommentInput = styled.input`
+  height: 2.4rem;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 18px;
+  color: #464646;
+  margin-left: 30px;
+  &::placeholder {
+    color: #999999;
+  }
+`;
+const QustionCommentInputIcon = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+const QustionCommentInputButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #3b64e6;
+  width: 100px;
+  height: 100%;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #5c5c5c;
+`;
+
+const CommentsListButton = styled.div``;
