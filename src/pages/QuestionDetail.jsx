@@ -40,7 +40,7 @@ const QuestionDetail = () => {
           );
         })}
       <Comments />
-      <CommentsListButton>글 목록</CommentsListButton>
+      <CommentsListButton onClick={() => navigate(-1)}>글 목록</CommentsListButton>
     </QuestionLayout>
   );
 };
@@ -84,7 +84,7 @@ const QuestionContent = styled.div`
   color: #4a4747;
 `;
 const QusitonList = styled.ul`
-  margin-left: 30px;
+  margin: 0 30px;
   margin-top: 1.5rem;
 `;
 const QustionItem = styled.li`
@@ -101,7 +101,7 @@ const Hr = styled.hr`
   border: 1px solid #dfdfdf;
 `;
 const QustionBox = styled.div`
-  padding: 3rem 0;
+  margin-top: 2.4rem;
   display: flex;
   align-items: center;
   color: #8b8b8b;
@@ -120,7 +120,7 @@ const QustionCommentInputLayout = styled.div`
   display: flex;
   align-items: center;
   border-radius: 8px;
-  margin: 60px auto;
+  margin: 1rem 0 3rem 0;
   border: 1px solid #5c5c5c;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
@@ -156,4 +156,15 @@ const QustionCommentInputButton = styled.div`
   border: 1px solid #5c5c5c;
 `;
 
-const CommentsListButton = styled.div``;
+const CommentsListButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 110px;
+  height: 50px;
+  margin-left: 30px;
+`;
