@@ -135,10 +135,15 @@ const RegisterH2 = styled.h2`
   font-size: 18px;
   margin-bottom: 3rem;
   color: #555;
+  a:link {
+    color: #3867d6;
+  }
+  a:visited {
+    color: #3867d6;
+  }
 `;
 
 const RegisterLinkBule = styled.span`
-  color: #3867d6;
   margin-left: 8px;
 `;
 

@@ -14,7 +14,9 @@ const QuestionBulletin = () => {
         <QuestionText>질문 게시판</QuestionText>
         <QustionButtonBox>
           <QuestionButtonImage src="/images/pencil.png" />
-          <QuestionButton>질문하기</QuestionButton>
+          <QuestionButton>
+            <Link to={'/write'}>질문하기</Link>
+          </QuestionButton>
         </QustionButtonBox>
       </QuestionBox>
       <QuestionSearch />
@@ -86,6 +88,12 @@ const QuestionButton = styled.span`
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  a:link {
+    color: #ffffff;
+  }
+  a:visited {
+    color: #ffffff;
+  }
 `;
 const QuestionButtonImage = styled.img`
   width: 25px;
