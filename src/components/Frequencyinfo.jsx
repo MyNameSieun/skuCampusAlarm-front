@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import frequencyinfo from 'frequencyinfo.json';
 
 const Frequencyinfo = () => {
   return (
@@ -6,60 +8,30 @@ const Frequencyinfo = () => {
       <FrequencyinfoH1>자주 찾는 정보</FrequencyinfoH1>
 
       <FrequencyinfoList>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/school.png" />
-          <FrequencyinfoItemText>학교건물</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/bus.png" />
-          <FrequencyinfoItemText>셔틀버스</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/schedule.png" />
-          <FrequencyinfoItemText>교시 별 시간</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/food-tray.png" />
-          <FrequencyinfoItemText>학식 정보</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/digital-library.png" />
-          <FrequencyinfoItemText>학술정보관 정보</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/contact-book.png" />
-          <FrequencyinfoItemText>학부/학과 연락처</FrequencyinfoItemText>
-        </FrequencyinfoItem>
+        {frequencyinfo.slice(0, 6).map((item) => (
+          <Link to={`/frequencyinfodetail/${item.id}`}>
+            <FrequencyinfoItem key={item.id}>
+              <FrequencyinfoItemLogo src={item.logo} alt={item.text} />
+              <FrequencyinfoItemText>{item.text}</FrequencyinfoItemText>
+            </FrequencyinfoItem>
+          </Link>
+        ))}
       </FrequencyinfoList>
       <FrequencyinfoList>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/student-grades.png" />
-          <FrequencyinfoItemText>최저이수 학점표</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/office.png" />
-          <FrequencyinfoItemText>오피스 설치</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/quality-control.png" />
-          <FrequencyinfoItemText>카피킬러 사용</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/wifi.png" />
-          <FrequencyinfoItemText>와이파이 연결 </FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/percentage-graph.png" />
-          <FrequencyinfoItemText>학점 비율</FrequencyinfoItemText>
-        </FrequencyinfoItem>
-        <FrequencyinfoItem>
-          <FrequencyinfoItemLogo src="/images/scholarship.png" />
-          <FrequencyinfoItemText>장학금</FrequencyinfoItemText>
-        </FrequencyinfoItem>
+        {frequencyinfo.slice(6, 12).map((item) => (
+         <Link to={`/frequencyinfodetail/${item.id}`}>
+            <FrequencyinfoItem key={item.id}>
+              <FrequencyinfoItemLogo src={item.logo} alt={item.text} />
+              <FrequencyinfoItemText>{item.text}</FrequencyinfoItemText>
+            </FrequencyinfoItem>
+          </Link>
+        ))}
       </FrequencyinfoList>
     </FrequencyinfoLayout>
   );
 };
+
+export default Frequencyinfo;
 
 const FrequencyinfoLayout = styled.div`
   padding: 60px;
@@ -70,6 +42,7 @@ const FrequencyinfoH1 = styled.h1`
   font-weight: bold;
   margin-bottom: 30px;
   margin: 0 200px;
+  margin-bottom: 30px;
 `;
 const FrequencyinfoList = styled.ul`
   display: flex;
@@ -109,5 +82,3 @@ const FrequencyinfoItemText = styled.div`
   top: 100%;
   margin-top: 10px;
 `;
-
-export default Frequencyinfo;
