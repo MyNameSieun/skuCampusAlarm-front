@@ -2,6 +2,12 @@ import MoreInfo from 'components/MoreInfo';
 import styled from 'styled-components';
 import { useNavigate, useParams } from 'react-router-dom';
 import info from 'info.json';
+import GradCalc from 'components/usefulInfo/GradCalc';
+import FoodGuide from 'components/usefulInfo/FoodGuide';
+import RegTips from 'components/usefulInfo/RegTips';
+import Apps from 'components/usefulInfo/Apps';
+import Youngker from 'components/usefulInfo/Youngker';
+import Papers from 'components/usefulInfo/Papers';
 
 const Info = () => {
   const navigate = useNavigate();
@@ -20,7 +26,14 @@ const Info = () => {
                   <InfoText>유용한 정보 /</InfoText>
                   <InfoTextSub>{item.textsub}</InfoTextSub>
                 </InfoBox>
-                <TextContent>{item.textContent}</TextContent>
+                <TextContent>
+                  {parseInt(id) === 1 && <GradCalc />}
+                  {parseInt(id) === 2 && <FoodGuide />}
+                  {parseInt(id) === 3 && <RegTips />}
+                  {parseInt(id) === 4 && <Apps />}
+                  {parseInt(id) === 5 && <Youngker />}
+                  {parseInt(id) === 6 && <Papers />}
+                </TextContent>
                 <InfoLink>
                   <a href={item.infoLink} target="_blank">
                     [ {item.infoTitle}↗️ ]

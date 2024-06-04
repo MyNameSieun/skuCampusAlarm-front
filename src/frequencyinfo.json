@@ -2,61 +2,85 @@
   {
     "id": 1,
     "text": "학교건물",
-    "logo": "/images/school.png"
+    "logo": "/images/school.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 2,
     "text": "셔틀버스",
-    "logo": "/images/bus.png"
+    "logo": "/images/bus.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 3,
     "text": "교시 별 시간",
-    "logo": "/images/schedule.png"
+    "logo": "/images/schedule.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 4,
     "text": "학식 정보",
-    "logo": "/images/food-tray.png"
+    "logo": "/images/food-tray.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 5,
     "text": "학술정보관 정보",
-    "logo": "/images/digital-library.png"
+    "logo": "/images/digital-library.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 6,
     "text": "학부/학과 연락처",
-    "logo": "/images/contact-book.png"
+    "logo": "/images/contact-book.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 7,
     "text": "최저이수 학점표",
-    "logo": "/images/student-grades.png"
+    "logo": "/images/student-grades.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 8,
     "text": "오피스 설치",
-    "logo": "/images/office.png"
+    "logo": "/images/office.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 9,
     "text": "카피킬러 사용",
-    "logo": "/images/quality-control.png"
+    "logo": "/images/quality-control.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 10,
     "text": "와이파이 연결",
-    "logo": "/images/wifi.png"
+    "logo": "/images/wifi.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 11,
     "text": "학점 비율",
-    "logo": "/images/percentage-graph.png"
+    "logo": "/images/percentage-graph.png",
+    "infoLink": "22",
+    "infoLinkText": "22"
   },
   {
     "id": 12,
     "text": "장학금",
-    "logo": "/images/scholarship.png"
+    "logo": "/images/scholarship.png",
+    "infoLink": "22",
+    "infoLinkText": "자세히 보기"
   }
 ]

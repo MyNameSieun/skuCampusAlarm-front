@@ -49,8 +49,8 @@ export default QuestionDetail;
 
 const QuestionLayout = styled.div`
   padding: 0 250px;
-  height: 110vh;
   background-color: white;
+  height: 100vh;
 `;
 const QuestionBox = styled.div`
   display: flex;
@@ -116,7 +116,7 @@ const QustionComment = styled.div`
 `;
 // 댓글작성 input
 const QustionCommentInputLayout = styled.div`
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -130,9 +130,9 @@ const QustionCommentInput = styled.input`
   border: none;
   outline: none;
   flex: 1;
-  font-size: 18px;
+  font-size: 16px;
   color: #464646;
-  margin-left: 30px;
+  margin-left: 20px;
   &::placeholder {
     color: #999999;
   }

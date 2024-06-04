@@ -15,13 +15,13 @@ const Login = () => {
     password: ''
   };
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('유효한 이메일을 입력해주세요.').required('값을 입력해주세요.'),
+    email: Yup.string().email('유효한 이메일을 입력하세요.').required('값을 입력하세요.'),
     password: Yup.string()
       .min(5, '비밀번호는 최소 5자 이상 입력하세요.')
       .matches(passwordRules, {
-        message: '최소 5자, 1개 이상의 대문자, 소문자, 숫자를 포함해서 입력해주세요.'
+        message: '최소 5자, 1개 이상의 대문자, 소문자, 숫자를 포함해서 입력하세요.'
       })
-      .required('값을 입력해주세요.')
+      .required('값을 입력하세요.')
   });
 
   const handleLogin = async (values) => {
@@ -115,7 +115,7 @@ const LoginForm = styled(Form)`
   p {
     font-size: 14px;
     color: red;
-    margin-top: 5px;
+    margin-top: -5px;
   }
 `;
 
