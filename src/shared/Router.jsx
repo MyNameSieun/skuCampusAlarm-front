@@ -7,6 +7,7 @@ import QuestionBulletin from 'pages/QuestionBulletin';
 import FrequencyQuestion from 'pages/FrequencyQuestion';
 import Register from 'pages/Register';
 import QuestionDetail from 'pages/QuestionDetail';
+import Write from 'pages/Write';
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
         <Route path="/questionDetail/:id" element={<QuestionDetail />} />
         <Route path="/frequencyQuestion" element={<FrequencyQuestion />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/write" element={<Write />} />
       </Routes>
     </BrowserRouter>
   );
