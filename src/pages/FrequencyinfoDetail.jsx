@@ -47,7 +47,7 @@ const FrequencyinfoDetail = () => {
                 </FrequencyDetailLayoutContent>
                 <FrequencyDetailLayoutLink>
                   <a href={item.infoLink} target="_blank">
-                    [ {item.infoLinkText}↗️ ]
+                    {item.infoLinkText}
                   </a>
                 </FrequencyDetailLayoutLink>
               </div>
@@ -63,7 +63,6 @@ export default FrequencyinfoDetail;
 const FrequencyDetailLayout = styled.div`
   padding: 0 250px;
   background-color: white;
-  height: 100vh;
 `;
 const TextContent = styled.div`
   font-size: 20px;
@@ -86,6 +85,7 @@ const FrequencyDetailLayoutText = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin-right: 10px;
+  color: black;
 `;
 const FrequencyDetailLayoutTextSub = styled.span`
   font-size: 24px;
