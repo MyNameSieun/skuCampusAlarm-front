@@ -1,4 +1,4 @@
-import foodGuide from 'foodGuide.json';
+import usefulInfo from 'usefulInfo.json';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ const FoodGuide = () => {
 
   return (
     <FoodGuideLayout>
-      {foodGuide.map((item) => {
+      {usefulInfo.foodGuide.map((item) => {
         return (
           <FoodGuideBox key={item.id}>
             <FoodGuidList>
