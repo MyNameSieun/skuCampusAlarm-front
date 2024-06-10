@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import postJson from 'post.json';
+
 import Comments from 'components/Comments';
 import axios from 'axios';
 
 const QuestionDetail = () => {
-  const [single, setSingle] = useState('');
+  const [single, setSingle] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -26,44 +26,35 @@ const QuestionDetail = () => {
   console.log(single);
 
   return (
-    <div>
-      <span>{single.content}</span>
-      <span>{single.author.nickname}</span>
-    </div>
-    // <QuestionLayout>
-    //   <QuestionBox>
-    //     <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
-    //     <QuestionText>질문 게시판</QuestionText>
-    //   </QuestionBox>
+    <QuestionLayout>
+      <QuestionBox>
+        <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
+        <QuestionText>질문 게시판</QuestionText>
+      </QuestionBox>
 
-    //   {postJson
-    //     .filter((item) => item.id === parseInt(id))
-    //     .map((item) => {
-    //       return (
-    //         <QusitonList key={item.id}>
-    //           <QustionItem>
-    //             <QusitonImage src={item.avatar} alt="아바타이미지" />
-    //             <QuestionNickname>{item.nickname}</QuestionNickname>
-    //           </QustionItem>
-    //           <QuestionTitle>{item.title}</QuestionTitle>
-    //           <QuestionContent>{item.content}</QuestionContent>
-    //           <QustionBox>
-    //             <img src="/images/comment.png" />
-    //             <QustionComment>3개</QustionComment>
-    //             <QustionTime>{item.time}</QustionTime>
-    //           </QustionBox>
-    //           <Hr />
-    //           <QustionCommentInputLayout>
-    //             <QustionCommentInputButton>등록</QustionCommentInputButton>
-    //             <QustionCommentInput placeholder="댓글 작성" />
-    //             <QustionCommentInputIcon src="/images/search-white.png" alt="search-white" />
-    //           </QustionCommentInputLayout>
-    //         </QusitonList>
-    //       );
-    //     })}
-    //   <Comments />
-    //   <CommentsListButton onClick={() => navigate(-1)}>글 목록</CommentsListButton>
-    // </QuestionLayout>
+      <QusitonList key={single.id}>
+        <QustionItem>
+          {/* <QusitonImage src={single.avatar} alt="아바타이미지" /> */}
+          <QuestionNickname>{single.nickname}</QuestionNickname>
+        </QustionItem>
+        <QuestionTitle>{single.title}</QuestionTitle>
+
+        <QustionBox>
+          <img src="/images/comment.png" />
+          <QustionComment>3개</QustionComment>
+          <QustionTime>{single.time}</QustionTime>
+        </QustionBox>
+        <Hr />
+        <QustionCommentInputLayout>
+          <QustionCommentInputButton>등록</QustionCommentInputButton>
+          <QustionCommentInput placeholder="댓글 작성" />
+          <QustionCommentInputIcon src="/images/search-white.png" alt="search-white" />
+        </QustionCommentInputLayout>
+      </QusitonList>
+
+      <Comments />
+      <CommentsListButton onClick={() => navigate(-1)}>글 목록</CommentsListButton>
+    </QuestionLayout>
   );
 };
 
@@ -114,11 +105,11 @@ const QustionItem = styled.li`
   align-items: center;
   gap: 1rem;
 `;
-const QusitonImage = styled.img`
-  border-radius: 10px;
-  width: 50px;
-  height: 50px;
-`;
+// const QusitonImage = styled.img`
+//   border-radius: 10px;
+//   width: 50px;
+//   height: 50px;
+// `;
 const Hr = styled.hr`
   border: 1px solid #dfdfdf;
 `;

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import postJson from 'post.json';
+
 import { useParams } from 'react-router-dom';
 const Comments = () => {
   const { id } = useParams();
   return (
     <CommentsLayout>
-      {postJson
+      {/* {postJson
         .filter((item) => item.id === parseInt(id))
         .map((item) => {
           return (
@@ -21,7 +21,7 @@ const Comments = () => {
               </CommentsList>
             </>
           );
-        })}
+        })} */}
     </CommentsLayout>
   );
 };

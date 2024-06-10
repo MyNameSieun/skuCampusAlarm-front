@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import postJson from 'post.json';
 import { Link } from 'react-router-dom';
 
 const QuestionBulletin = () => {
@@ -41,20 +40,21 @@ const QuestionBulletin = () => {
       {board.map((item) => {
         return (
           <Link to={`/questionDetail/${item.id}`} key={item.id}>
-            <QusitonList>
+            <QuestionList>
               <QustionTitle>{item.title}</QustionTitle>
               <QustionItem>
                 <QusitonLeft>
                   <QustionContent>{item.content}</QustionContent>
                 </QusitonLeft>
                 <QustionRight>
+                  <div>{item.author.nickname}</div>
                   <QustionTime>{item.createdAt}</QustionTime>
                   <img src="/images/comment.png" />
                   <QustionComment>3개</QustionComment>
                 </QustionRight>
               </QustionItem>
               <Hr />
-            </QusitonList>
+            </QuestionList>
           </Link>
         );
       })}
@@ -116,10 +116,9 @@ const QuestionButton = styled.span`
 const QuestionButtonImage = styled.img`
   width: 25px;
   height: 25px;
-  margin-right: 5px;
 `;
 
-const QusitonList = styled.ul`
+const QuestionList = styled.ul`
   margin-left: 30px;
   margin-top: 1.5rem;
   cursor: pointer;
@@ -136,7 +135,6 @@ const QustionRight = styled.div`
   align-items: center;
   white-space: nowrap;
   img {
-    margin-left: 1rem;
     height: 19px;
   }
 `;
@@ -149,7 +147,9 @@ const QustionTitle = styled.div`
 `;
 
 const QustionContent = styled.div``;
-const QustionTime = styled.div``;
+const QustionTime = styled.div`
+  margin: 0 0.7rem;
+`;
 const QustionComment = styled.div``;
 const Hr = styled.hr`
   border: 0;

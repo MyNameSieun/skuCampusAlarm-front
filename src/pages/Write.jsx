@@ -8,24 +8,17 @@ import { useNavigate } from 'react-router-dom';
 const Write = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
-  const [images, setImage] = useState('');
 
   const navigate = useNavigate();
   const handleContentChange = (value) => {
     setContent(value);
   };
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files);
-  };
   const handleSubmit = async (e) => {
     e.preventDefault(); // 재렌더링 방지
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);
-    for (let i = 0; i < images.length; i++) {
-      formData.append('images', images[i]);
-    }
 
     try {
       await axios.post('http://localhost:8080/posts/new', formData, {
@@ -35,7 +28,7 @@ const Write = () => {
         }
       });
       alert('게시글이 등록되었습니다.');
-      navigate('/');
+      navigate('/questionBulletin');
     } catch (error) {
       console.log(error);
       alert(error.response.data);
@@ -52,9 +45,6 @@ const Write = () => {
         <FormGroup>
           <Label htmlFor="content">내용</Label>
           <StyledReactQuill value={content} onChange={handleContentChange} />
-        </FormGroup>
-        <FormGroup>
-          <input type="file" multiple onChange={handleImageChange} />
         </FormGroup>
         <Button type="submit">등록</Button>
       </Form>
