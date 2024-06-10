@@ -7,11 +7,7 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(''); //현재 로그인한 유저 정보 담아둘 state
 
   const login = async (values) => {
-<<<<<<< HEAD
     const res = await axios.post('http://localhost:8080/login', values, {
-=======
-    const res = await axios.post('백앤드 매핑 주소', values, {
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
       //백앤드에서 세션 방식 사용하기 때문에 withCredential: true로
       withCredentials: true
     });
@@ -20,11 +16,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-<<<<<<< HEAD
     await axios.get('http://localhost:8080/logout', {
-=======
-    await axios.get('백앤드 매핑 주소', {
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
       withCredentials: true
     });
     setCurrentUser('');

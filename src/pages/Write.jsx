@@ -3,27 +3,18 @@ import ReactQuill from 'react-quill'; // react-quill 라이브러리
 import 'react-quill/dist/quill.snow.css'; // react-quill 라이브러리
 import axios from 'axios';
 import styled from 'styled-components';
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
-=======
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 
 const Write = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
-<<<<<<< HEAD
   const [images, setImage] = useState('');
 
   const navigate = useNavigate();
-=======
-  const [file, setFile] = useState(null);
-
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
   const handleContentChange = (value) => {
     setContent(value);
   };
 
-<<<<<<< HEAD
   const handleImageChange = (e) => {
     setImage(e.target.files);
   };
@@ -48,31 +39,6 @@ const Write = () => {
     } catch (error) {
       console.log(error);
       alert(error.response.data);
-=======
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // 재렌더링 방지
-
-    const formData = new FormData(); // 이미지를 처리하기 위해 form-data 형식으로
-    formData.append('title', title);
-    formData.append('content', content);
-    if (file) {
-      formData.append('file', file);
-    }
-
-    try {
-      await axios.post('백엔드 매핑 주소', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data' // 이미지를 처리하기 위해 form-data 형식으로
-        }
-      });
-      alert('게시글 등록 성공');
-    } catch (error) {
-      console.error(error);
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
     }
   };
 
@@ -88,12 +54,7 @@ const Write = () => {
           <StyledReactQuill value={content} onChange={handleContentChange} />
         </FormGroup>
         <FormGroup>
-<<<<<<< HEAD
           <input type="file" multiple onChange={handleImageChange} />
-=======
-          <Label htmlFor="file">이미지 첨부</Label>
-          <Input type="file" id="file" onChange={handleFileChange} />
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
         </FormGroup>
         <Button type="submit">등록</Button>
       </Form>

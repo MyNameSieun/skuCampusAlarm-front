@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-// 추천 어플(id=4)
-const Apps = () => {
-  return <div></div>;
-};
-
-export default Apps;
-=======
 import styled from 'styled-components';
 import usefulInfo from 'usefulInfo.json';
 
@@ -56,4 +48,3 @@ const AppDescription = styled.p`
   color: #666;
   line-height: 1.5;
 `;
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296

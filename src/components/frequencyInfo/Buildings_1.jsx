@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-const Buildings_1 = () => {
-  return <div></div>;
-};
-
-export default Buildings_1;
-=======
 import styled from 'styled-components';
 
 const Buildings_1 = () => {
@@ -41,4 +34,3 @@ const BuildingsItem = styled.li`
   font-size: 20px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 `;
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296

@@ -1,9 +1,6 @@
 import QuestionSearch from 'components/QuestionSearch';
-<<<<<<< HEAD
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-=======
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import postJson from 'post.json';
@@ -11,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const QuestionBulletin = () => {
   const navigate = useNavigate();
-<<<<<<< HEAD
   const [board, setBoard] = useState([]);
 
   useEffect(() => {
@@ -28,8 +24,6 @@ const QuestionBulletin = () => {
   }, []);
 
   console.log(board);
-=======
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 
   return (
     <QuestionLayout>
@@ -44,11 +38,7 @@ const QuestionBulletin = () => {
         </QustionButtonBox>
       </QuestionBox>
       <QuestionSearch />
-<<<<<<< HEAD
       {board.map((item) => {
-=======
-      {postJson.map((item) => {
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
         return (
           <Link to={`/questionDetail/${item.id}`} key={item.id}>
             <QusitonList>
@@ -58,11 +48,7 @@ const QuestionBulletin = () => {
                   <QustionContent>{item.content}</QustionContent>
                 </QusitonLeft>
                 <QustionRight>
-<<<<<<< HEAD
                   <QustionTime>{item.createdAt}</QustionTime>
-=======
-                  <QustionTime>{item.time}</QustionTime>
->>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
                   <img src="/images/comment.png" />
                   <QustionComment>3개</QustionComment>
                 </QustionRight>
