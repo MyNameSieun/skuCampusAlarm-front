@@ -1,8 +1,7 @@
-import usefulInfo from 'usefulInfo.json';
+import foodGuide from 'foodGuide.json';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-// 학교 근처 맛집(id=2)
 const FoodGuide = () => {
   const [toggle, setToggle] = useState({});
 
@@ -15,7 +14,7 @@ const FoodGuide = () => {
 
   return (
     <FoodGuideLayout>
-      {usefulInfo.foodGuide.map((item) => {
+      {foodGuide.map((item) => {
         return (
           <FoodGuideBox key={item.id}>
             <FoodGuidList>
@@ -32,7 +31,7 @@ const FoodGuide = () => {
                 <FoodGuideHoliday>{item.holiday}</FoodGuideHoliday>
                 <FoodGuideBreakTime>{item.breakTime}</FoodGuideBreakTime>
                 <FoodGuidePlace>
-                  <a href={item.place} target="_blank">
+                  <a href={item.place} target="_blank" rel="noopener noreferrer">
                     바로가기 ↗️
                   </a>
                 </FoodGuidePlace>
@@ -52,6 +51,7 @@ const FoodGuideLayout = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #f9fafb;
 `;
 
 const FoodGuideArrow = styled.img`
@@ -84,7 +84,7 @@ const FoodGuidItem = styled.div`
 `;
 
 const FoodGuideMenu = styled.div`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #333;
 `;
@@ -115,8 +115,10 @@ const FoodGuidePlace = styled.div`
   a {
     text-decoration: none;
     color: inherit;
+    color: #007bff;
     &:hover {
       text-decoration: underline;
+      color: #007bff;
     }
   }
 `;

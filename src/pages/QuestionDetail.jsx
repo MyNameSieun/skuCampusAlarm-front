@@ -50,10 +50,9 @@ const QuestionDetail = () => {
       </QuestionBox>
 
       <QusitonList key={single.id}>
-        <QustionItem>
-          <QuestionNickname>{single.nickname}</QuestionNickname>
-        </QustionItem>
+        <QustionItem></QustionItem>
         <QuestionTitle>{single.title}</QuestionTitle>
+
         <QuestionContent dangerouslySetInnerHTML={{ __html: single.content }} />
 
         {AuthContext && AuthContext.id === single.authorId && (
@@ -68,6 +67,7 @@ const QuestionDetail = () => {
           <QustionComment>{single.comments ? single.comments.length : 0}</QustionComment>
           <QustionTime>{single.time}</QustionTime>
           <div>{single.createdAt?.replace('T', ' ')}</div>
+          <QuestionNickname>{single.author ? single.author.nickname : 0}</QuestionNickname>
         </QustionBox>
         <Hr />
       </QusitonList>
@@ -83,7 +83,6 @@ export default QuestionDetail;
 const QuestionLayout = styled.div`
   padding: 0 250px;
   background-color: white;
-  height: 100vh;
 `;
 const QuestionBox = styled.div`
   display: flex;
@@ -103,7 +102,7 @@ const QuestionText = styled.div`
 `;
 
 const QuestionNickname = styled.div`
-  font-size: 20px;
+  margin-left: 10px;
 `;
 const QuestionTitle = styled.div`
   margin: 1.4rem 0 3rem 0;

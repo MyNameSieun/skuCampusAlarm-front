@@ -149,7 +149,7 @@ const QustionTitle = styled.div`
 `;
 
 const QuestionContent = styled.div`
-  height: 1.2rem;
+  height: 1rem;
   white-space: nowrap; // 한줄로만
   overflow: hidden;
   text-overflow: ellipsis; // 넘치면 ... 표시

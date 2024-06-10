@@ -22,7 +22,7 @@ const FrequencyQuestion = () => {
         <FrequencyImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
         <FrequencyText>자주 묻는 질문</FrequencyText>
       </FrequencyBox>
-      <QuestionSearch />
+      {/* <QuestionSearch /> */}
       {frequencyQuestion.map((item) => {
         return (
           <FrequencyQuestionList key={item.id}>
@@ -60,6 +60,7 @@ const FrequencyBox = styled.div`
   align-items: center;
   font-weight: bold;
   font-size: 32px;
+  margin-bottom: 3rem;
 `;
 
 const FrequencyImage = styled.img`

@@ -30,7 +30,7 @@
     "text": "학술정보관 정보",
     "logo": "/images/digital-library.png",
     "infoLink": "22",
-    "infoLinkText": "22"
+    "infoLinkText": " [ 자세히 보기↗️ ]"
   },
   {
     "id": 6,
@@ -42,21 +42,21 @@
     "text": "최저이수 학점표",
     "logo": "/images/student-grades.png",
     "infoLink": "22",
-    "infoLinkText": "22"
+    "infoLinkText": " [ 자세히 보기↗️ ]"
   },
   {
     "id": 8,
     "text": "오피스 설치",
     "logo": "/images/office.png",
-    "infoLink": "https://everytime.kr/389200/v/173967269",
-    "infoLinkText": "22"
+    "infoLink": "https://www.sungkyul.ac.kr/skukr/335/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGc2t1a3IlMkY5OSUyRjIwMjElMkZhcnRjbFZpZXcuZG8lM0Zpc1ZpZXdNaW5lJTNEZmFsc2UlMjZiYnNDbFNlcSUzRCUyNnNyY2hXcmQlM0RvZmZpY2UlMjZyZ3NCZ25kZVN0ciUzRCUyNnBhZ2UlM0QxJTI2YmJzT3BlbldyZFNlcSUzRCUyNnJnc0VuZGRlU3RyJTNEJTI2c3JjaENvbHVtbiUzRHNqJTI2cGFzc3dvcmQlM0QlMjY%3D",
+    "infoLinkText": " [ 자세히 보기↗️ ]"
   },
   {
     "id": 9,
     "text": "카피킬러 사용",
     "logo": "/images/quality-control.png",
     "infoLink": "https://everytime.kr/389111/v/218100608",
-    "infoLinkText": "22"
+    "infoLinkText": " [ 자세히 보기↗️ ]"
   },
   {
     "id": 10,
@@ -70,13 +70,13 @@
     "text": "학점 비율",
     "logo": "/images/percentage-graph.png",
     "infoLink": "22",
-    "infoLinkText": "22"
+    "infoLinkText": " [ 자세히 보기↗️ ]"
   },
   {
     "id": 12,
     "text": "장학금",
     "logo": "/images/scholarship.png",
-    "infoLink": "22",
+    "infoLink": "https://www.sungkyul.ac.kr/skukr/330/subview.do",
     "infoLinkText": " [ 자세히 보기↗️ ]"
   }
 ]
