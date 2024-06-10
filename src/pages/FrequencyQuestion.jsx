@@ -40,7 +40,7 @@ const FrequencyQuestion = () => {
             {toggle[item.id] && (
               <FrequencyQuestionA>
                 <FrequencyColorBlue>A</FrequencyColorBlue>
-                {item.ans}
+                <FrequencyColorAns>{item.ans}</FrequencyColorAns>
               </FrequencyQuestionA>
             )}
           </FrequencyQuestionList>
@@ -53,7 +53,7 @@ const FrequencyQuestion = () => {
 export default FrequencyQuestion;
 
 const FrequencyLayout = styled.div`
-  padding: 0 250px;
+  padding: 0 250px 50px 250px;
 `;
 const FrequencyBox = styled.div`
   display: flex;
@@ -97,6 +97,9 @@ const FrequencyColorBlue = styled.div`
   font-weight: bold;
   padding: 0 30px;
   font-size: 20px;
+`;
+const FrequencyColorAns = styled.div`
+  line-height: 1.5rem;
 `;
 // FrequencyArrow에 toggle prop을 추가하고 스타일을 동적으로 적용
 const FrequencyArrow = styled.img`

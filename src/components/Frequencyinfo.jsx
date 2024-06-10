@@ -19,7 +19,7 @@ const Frequencyinfo = () => {
       </FrequencyinfoList>
       <FrequencyinfoList>
         {frequencyinfo.slice(6, 12).map((item) => (
-         <Link to={`/frequencyinfodetail/${item.id}`}>
+          <Link to={`/frequencyinfodetail/${item.id}`}>
             <FrequencyinfoItem key={item.id}>
               <FrequencyinfoItemLogo src={item.logo} alt={item.text} />
               <FrequencyinfoItemText>{item.text}</FrequencyinfoItemText>

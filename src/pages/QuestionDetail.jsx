@@ -23,7 +23,19 @@ const QuestionDetail = () => {
     getSingle();
   }, [id]);
 
-  console.log(single);
+  // 삭제
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:8080/posts/${id}`, {
+        withCredentials: true
+      });
+      alert('게시글이 삭제되었습니다.');
+      navigate('/questionBulletin');
+    } catch (error) {
+      console.log(error);
+      alert(error.response.data);
+    }
+  };
 
   return (
     <QuestionLayout>
@@ -34,22 +46,21 @@ const QuestionDetail = () => {
 
       <QusitonList key={single.id}>
         <QustionItem>
-          {/* <QusitonImage src={single.avatar} alt="아바타이미지" /> */}
           <QuestionNickname>{single.nickname}</QuestionNickname>
         </QustionItem>
         <QuestionTitle>{single.title}</QuestionTitle>
-
+        <QuestionContent>{single.content}</QuestionContent>
+        <QustionButtonBox>
+          <QustionButton>수정</QustionButton>
+          <QustionButton onClick={handleDelete}>삭제</QustionButton>
+        </QustionButtonBox>
         <QustionBox>
           <img src="/images/comment.png" />
-          <QustionComment>3개</QustionComment>
+          <QustionComment>{single.comments ? single.comments.length : 0}</QustionComment>
           <QustionTime>{single.time}</QustionTime>
+          <div>{single.createdAt?.replace('T', ' ')}</div>
         </QustionBox>
         <Hr />
-        <QustionCommentInputLayout>
-          <QustionCommentInputButton>등록</QustionCommentInputButton>
-          <QustionCommentInput placeholder="댓글 작성" />
-          <QustionCommentInputIcon src="/images/search-white.png" alt="search-white" />
-        </QustionCommentInputLayout>
       </QusitonList>
 
       <Comments />
@@ -87,15 +98,15 @@ const QuestionNickname = styled.div`
 `;
 const QuestionTitle = styled.div`
   margin-top: 1.4rem;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #464646;
+  margin-bottom: 1rem;
 `;
 const QuestionContent = styled.div`
-  margin-top: 1.2rem;
-  font-size: 16px;
   color: #4a4747;
 `;
+
 const QusitonList = styled.ul`
   margin: 0 30px;
   margin-top: 1.5rem;
@@ -105,16 +116,12 @@ const QustionItem = styled.li`
   align-items: center;
   gap: 1rem;
 `;
-// const QusitonImage = styled.img`
-//   border-radius: 10px;
-//   width: 50px;
-//   height: 50px;
-// `;
+
 const Hr = styled.hr`
   border: 1px solid #dfdfdf;
 `;
 const QustionBox = styled.div`
-  margin-top: 2.4rem;
+  margin-top: -1rem;
   display: flex;
   align-items: center;
   color: #8b8b8b;
@@ -127,46 +134,20 @@ const QustionTime = styled.div``;
 const QustionComment = styled.div`
   margin-right: 1rem;
 `;
-// 댓글작성 input
-const QustionCommentInputLayout = styled.div`
-  height: 60px;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  margin: 1rem 0 3rem 0;
-  border: 1px solid #5c5c5c;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-`;
 
-const QustionCommentInput = styled.input`
-  height: 2.4rem;
-  border: none;
-  outline: none;
-  flex: 1;
-  font-size: 16px;
-  color: #464646;
-  margin-left: 20px;
-  &::placeholder {
-    color: #999999;
-  }
-`;
-const QustionCommentInputIcon = styled.img`
-  width: 24px;
-  height: 24px;
-`;
-const QustionCommentInputButton = styled.div`
+const QustionButtonBox = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  border-radius: 7px;
+  gap: 1rem;
+  margin-top: 4rem;
+`;
+const QustionButton = styled.div`
   cursor: pointer;
   background-color: #3b64e6;
-  width: 100px;
-  height: 100%;
-  border-radius: 6px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  border: 1px solid #5c5c5c;
+  padding: 1rem 2rem;
+  border-radius: 12px;
 `;
 
 const CommentsListButton = styled.div`
@@ -179,5 +160,5 @@ const CommentsListButton = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 110px;
   height: 50px;
-  margin-left: 30px;
+  margin: 2rem 0 0 30px;
 `;

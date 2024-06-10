@@ -48,9 +48,9 @@ const QuestionBulletin = () => {
                 </QusitonLeft>
                 <QustionRight>
                   <div>{item.author.nickname}</div>
-                  <QustionTime>{item.createdAt}</QustionTime>
+                  <QustionTime>{item.createdAt?.replace('T', ' ')}</QustionTime>
                   <img src="/images/comment.png" />
-                  <QustionComment>3개</QustionComment>
+                  <QustionComment>{item.comments ? item.comments.length : 0}</QustionComment>
                 </QustionRight>
               </QustionItem>
               <Hr />
@@ -65,7 +65,7 @@ const QuestionBulletin = () => {
 export default QuestionBulletin;
 
 const QuestionLayout = styled.div`
-  padding: 0 250px;
+  padding: 0 250px 180px 250px;
   height: 110vh;
   background-color: white;
 `;

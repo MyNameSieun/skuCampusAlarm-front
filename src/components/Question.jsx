@@ -1,7 +1,25 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import frequencyQ from 'frequencyQuestion.json';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Question = () => {
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    const getQuestion = async () => {
+      try {
+        const res = await axios.get('http://localhost:8080/posts');
+        setQuestions(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getQuestion();
+  }, []);
+
   return (
     <QuestionLayout>
       <QuestionH1>질문 게시판</QuestionH1>
@@ -11,27 +29,26 @@ const Question = () => {
           <QuestionBox>
             <QuestionList>자주 묻는 질문</QuestionList>
             <Hr />
-            <QuestionItem>
-              <QuestionBlue type="question">Q</QuestionBlue>
-              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-            </QuestionItem>
-            <QuestionItem>
-              <QuestionBlue type="question">Q</QuestionBlue>
-              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-            </QuestionItem>
-            <QuestionItem>
-              <QuestionBlue type="question">Q</QuestionBlue>
-              <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-            </QuestionItem>
+            {frequencyQ.slice(0, 5).map((item) => (
+              <QuestionItem key={item.id}>
+                <QuestionBlue type="question">Q</QuestionBlue>
+                <span>{item.question}</span>
+              </QuestionItem>
+            ))}
           </QuestionBox>
         </Link>
+
         <QuestionBox>
           <QuestionList>최근 올라온 질문</QuestionList>
           <Hr />
-          <QuestionItem>
-            <QuestionBlue type="question">Q</QuestionBlue>
-            <span>사이버캠퍼스? LMS? 코스모스가 뭔가요?</span>
-          </QuestionItem>
+          {questions.slice(0, 5).map((item) => (
+            <QuestionItem key={item.id}>
+              <QuestionBlue type="question">Q</QuestionBlue>
+              <Link to={`/questionDetail/${item.id}`}>
+                <span>{item.title}</span>
+              </Link>
+            </QuestionItem>
+          ))}
         </QuestionBox>
       </QuestionContainer>
     </QuestionLayout>
