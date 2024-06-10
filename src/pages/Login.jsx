@@ -39,18 +39,22 @@ const Login = () => {
   return (
     <LoginLayout>
       <LoginH1>로그인을 진행해주세요.</LoginH1>
+      <LoginrH2>
+        <LoginLinkBule>
+          <Link to={'/register'}>회원가입하기 {'>'}</Link>
+        </LoginLinkBule>
+      </LoginrH2>
       <Formik initialValues={initialValues} onSubmit={handleLogin} validationSchema={validationSchema}>
         <LoginForm>
           <Field name="email" type="email" placeholder="이메일" />
           <ErrorMessage name="email" component="p" />
           <Field name="password1" type="password" placeholder="비밀번호" />
           <ErrorMessage name="password1" component="p" />
-
           <LoginButton type="submit">로그인</LoginButton>
           {error && <ErrorMessageText>{error}</ErrorMessageText>}
         </LoginForm>
       </Formik>
-      <LoginBox>
+      {/* <LoginBox>
         <LoginBoxSubText>
           <Link to="/register">회원가입</Link>
           <span>|</span>
@@ -73,7 +77,8 @@ const Login = () => {
           <LoginImage src="/images/naverLogo.png" />
           네이버 로그인
         </LoginItem>
-      </LoginBox>
+      </LoginBox>{' '}
+      */}
     </LoginLayout>
   );
 };
@@ -81,22 +86,37 @@ const Login = () => {
 export default Login;
 
 const LoginLayout = styled.div`
-  padding: 60px;
-  width: 40%;
-  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 5% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const LoginH1 = styled.h1`
-  margin-bottom: 3rem;
-  font-size: 32px;
+  margin-bottom: 1rem;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
+`;
+const LoginrH2 = styled.h2`
+  font-size: 18px;
+  margin-bottom: 3rem;
+  color: #555;
+  a:link {
+    color: #3867d6;
+  }
+  a:visited {
+    color: #3867d6;
+  }
+`;
+const LoginLinkBule = styled.span`
+  margin-left: 8px;
 `;
 
 const LoginForm = styled(Form)`
@@ -106,59 +126,57 @@ const LoginForm = styled(Form)`
   gap: 1rem;
   input {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
-    padding: 14px 12px;
-
     &:focus {
-      border-color: #3867d6;
+      border-color: #4a90e2;
     }
   }
   p {
-    font-size: 14px;
+    font-size: 12px;
     color: red;
     margin-top: -5px;
   }
 `;
 
 const LoginButton = styled.button`
-  padding: 15px;
-  background-color: #3b64e6;
+  padding: 12px;
+  background-color: #4a90e2;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #2a48bd;
+    background-color: #357abd;
   }
 `;
 
 const LoginBox = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 const LoginBoxSubText = styled.span`
   display: flex;
   justify-content: center;
-  color: #464646;
-  padding: 2rem;
+  color: #666;
+  padding: 1rem 0;
   span {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 `;
 
 const LoginText = styled.span`
   display: flex;
   justify-content: center;
-  color: #818181;
-  margin: 2rem;
+  color: #999;
+  margin: 2rem 0;
   white-space: nowrap;
-  margin: 70px 0 30px 0;
   text-align: center;
   font-size: 14px;
 `;
@@ -169,20 +187,21 @@ const LoginItem = styled.div`
   justify-content: center;
   cursor: pointer;
   white-space: nowrap;
-  background-color: ${(props) => (props.type === 'kakao' ? '#FFEB3B' : '#00BF18')};
-  color: ${(props) => (props.type === 'kakao' ? '#2C2700' : '#ffffff')};
-  width: 270px;
-  height: 65px;
-  margin: 10px;
-  font-size: 16px;
+  background-color: ${(props) => (props.type === 'kakao' ? '#FEE500' : '#03C75A')};
+  color: ${(props) => (props.type === 'kakao' ? '#3C1E1E' : '#ffffff')};
+  width: 100%;
+  max-width: 270px;
+  height: 50px;
+  margin: 5px 10px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const LoginImage = styled.img`
-  width: 30px;
-  margin-right: 10px;
+  width: 24px;
+  margin-right: 8px;
   object-fit: cover;
 `;
 

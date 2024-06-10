@@ -55,9 +55,9 @@ const Register = () => {
       <RegisterH1>회원가입을 진행해주세요.</RegisterH1>
       <RegisterH2>
         계정이 있으신가요?
-        <RegisterLinkBule>
+        <RegisterLinkBlue>
           <Link to={'/login'}>로그인하기 {'>'}</Link>
-        </RegisterLinkBule>
+        </RegisterLinkBlue>
       </RegisterH2>
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
         <RegisterForm>
@@ -72,7 +72,6 @@ const Register = () => {
           <RegisterFieldBox>
             <Field name="email" placeholder="이메일" />
             <ErrorMessage name="email" component="p" />
-            {/* <RegisterCheckButton>중복확인</RegisterCheckButton> */}
           </RegisterFieldBox>
           <RegisterFieldBox>
             <Field type="password" name="password1" placeholder="비밀번호" />
@@ -86,7 +85,7 @@ const Register = () => {
           {error && <ErrorMessageText>{error}</ErrorMessageText>}
         </RegisterForm>
       </Formik>
-      <RegisterBox>
+      {/* <RegisterBox>
         <RegisterBoxSubText>
           <Link to="/login">로그인</Link>
           <span>|</span>
@@ -109,7 +108,7 @@ const Register = () => {
           <RegisterImage src="/images/naverLogo.png" />
           네이버 회원가입
         </RegisterItem>
-      </RegisterBox>
+      </RegisterBox> */}
     </RegisterLayout>
   );
 };
@@ -117,38 +116,37 @@ const Register = () => {
 export default Register;
 
 const RegisterLayout = styled.div`
-  padding: 60px;
-  width: 40%;
-  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 5% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const RegisterH1 = styled.h1`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #333;
 `;
 
 const RegisterH2 = styled.h2`
-  font-size: 18px;
-  margin-bottom: 3rem;
+  font-size: 16px;
+  margin-bottom: 2rem;
   color: #555;
-  a:link {
-    color: #3867d6;
-  }
-  a:visited {
-    color: #3867d6;
-  }
 `;
 
-const RegisterLinkBule = styled.span`
+const RegisterLinkBlue = styled.span`
   margin-left: 8px;
+  a {
+    text-decoration: none;
+    color: #3867d6;
+  }
 `;
 
 const RegisterForm = styled(Form)`
@@ -164,47 +162,32 @@ const RegisterFieldBox = styled.div`
   width: 100%;
   input {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
-    padding: 14px 12px;
     &:focus {
-      border-color: #3867d6;
+      border-color: #4a90e2;
     }
   }
   p {
-    font-size: 14px;
+    font-size: 12px;
     color: red;
     margin-top: 5px;
   }
 `;
 
-const RegisterCheckButton = styled.button`
-  margin-top: 10px;
-  align-self: flex-start;
-  padding: 10px 20px;
-  background-color: #e5e5e5;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  color: #555;
-  cursor: pointer;
-  &:hover {
-    background-color: #d4d4d4;
-  }
-`;
-
 const RegisterButton = styled.button`
-  padding: 15px;
-  background-color: #3b64e6;
+  padding: 12px;
+  background-color: #4a90e2;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #2a48bd;
+    background-color: #357abd;
   }
 `;
 
@@ -256,19 +239,20 @@ const RegisterItem = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: ${(props) => (props.type === 'kakao' ? '#FFEB3B' : '#00BF18')};
-  color: ${(props) => (props.type === 'kakao' ? '#2C2700' : '#ffffff')};
-  width: 270px;
-  height: 65px;
-  margin: 10px;
-  font-size: 16px;
+  background-color: ${(props) => (props.type === 'kakao' ? '#FEE500' : '#03C75A')};
+  color: ${(props) => (props.type === 'kakao' ? '#3C1E1E' : '#ffffff')};
+  width: 100%;
+  max-width: 270px;
+  height: 50px;
+  margin: 5px 10px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const RegisterImage = styled.img`
-  width: 30px;
-  margin-right: 10px;
+  width: 24px;
+  margin-right: 8px;
   object-fit: cover;
 `;
