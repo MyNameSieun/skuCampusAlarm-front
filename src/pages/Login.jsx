@@ -4,12 +4,16 @@ import * as Yup from 'yup';
 import { AuthContext } from '../context/AuthContext';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useContext, useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
+=======
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [error, setError] = useState('');
 
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
@@ -20,6 +24,16 @@ const Login = () => {
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('유효한 이메일을 입력하세요.').required('값을 입력하세요.'),
     password1: Yup.string()
+=======
+  const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
+  const initialValues = {
+    email: '',
+    password: ''
+  };
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email('유효한 이메일을 입력하세요.').required('값을 입력하세요.'),
+    password: Yup.string()
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
       .min(5, '비밀번호는 최소 5자 이상 입력하세요.')
       .matches(passwordRules, {
         message: '최소 5자, 1개 이상의 대문자, 소문자, 숫자를 포함해서 입력하세요.'
@@ -30,7 +44,10 @@ const Login = () => {
   const handleLogin = async (values) => {
     try {
       await login(values);
+<<<<<<< HEAD
       navigate('/');
+=======
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
     } catch (error) {
       setError(error.response.data);
     }
@@ -43,8 +60,13 @@ const Login = () => {
         <LoginForm>
           <Field name="email" type="email" placeholder="이메일" />
           <ErrorMessage name="email" component="p" />
+<<<<<<< HEAD
           <Field name="password1" type="password" placeholder="비밀번호" />
           <ErrorMessage name="password1" component="p" />
+=======
+          <Field name="password" type="password" placeholder="비밀번호" />
+          <ErrorMessage name="password" component="p" />
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 
           <LoginButton type="submit">로그인</LoginButton>
           {error && <ErrorMessageText>{error}</ErrorMessageText>}

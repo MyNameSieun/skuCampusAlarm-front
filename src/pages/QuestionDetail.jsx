@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import postJson from 'post.json';
@@ -64,6 +65,51 @@ const QuestionDetail = () => {
     //   <Comments />
     //   <CommentsListButton onClick={() => navigate(-1)}>글 목록</CommentsListButton>
     // </QuestionLayout>
+=======
+import styled from 'styled-components';
+import postJson from 'post.json';
+import Comments from 'components/Comments';
+
+const QuestionDetail = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  return (
+    <QuestionLayout>
+      <QuestionBox>
+        <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
+        <QuestionText>질문 게시판</QuestionText>
+      </QuestionBox>
+
+      {postJson
+        .filter((item) => item.id === parseInt(id))
+        .map((item) => {
+          return (
+            <QusitonList key={item.id}>
+              <QustionItem>
+                <QusitonImage src={item.avatar} alt="아바타이미지" />
+                <QuestionNickname>{item.nickname}</QuestionNickname>
+              </QustionItem>
+              <QuestionTitle>{item.title}</QuestionTitle>
+              <QuestionContent>{item.content}</QuestionContent>
+              <QustionBox>
+                <img src="/images/comment.png" />
+                <QustionComment>3개</QustionComment>
+                <QustionTime>{item.time}</QustionTime>
+              </QustionBox>
+              <Hr />
+              <QustionCommentInputLayout>
+                <QustionCommentInputButton>등록</QustionCommentInputButton>
+                <QustionCommentInput placeholder="댓글 작성" />
+                <QustionCommentInputIcon src="/images/search-white.png" alt="search-white" />
+              </QustionCommentInputLayout>
+            </QusitonList>
+          );
+        })}
+      <Comments />
+      <CommentsListButton onClick={() => navigate(-1)}>글 목록</CommentsListButton>
+    </QuestionLayout>
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
   );
 };
 

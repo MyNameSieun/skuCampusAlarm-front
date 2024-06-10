@@ -4,13 +4,19 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
+=======
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
 
 const Register = () => {
   const [error, setError] = useState('');
 
+<<<<<<< HEAD
   const navigate = useNavigate();
 
+=======
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
   const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
   const initialValues = {
     name: '',
@@ -42,9 +48,14 @@ const Register = () => {
 
   const handleSubmit = async (values) => {
     try {
+<<<<<<< HEAD
       await axios.post('http://localhost:8080/members/new', values);
       alert('회원가입 성공');
       navigate('/');
+=======
+      await axios.post('백앤드 매핑 주소', values);
+      alert('회원가입 성공');
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
     } catch (error) {
       setError(error.response.data);
     }

@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { useContext } from 'react';
 import { AuthContext } from 'context/AuthContext';
 
 const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
 
+=======
+
+const Navbar = () => {
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
   return (
     <NavbarLayout>
       <NavbarListLeft>
@@ -19,6 +24,7 @@ const Navbar = () => {
           <Link to={'/questionBulletin'}>질문 게시판</Link>
         </NavbarItemRight>
         <NavbarItemRight className="loginSignUp">
+<<<<<<< HEAD
           {currentUser ? (
             <>
               <span>{currentUser.nickname}</span>
@@ -29,6 +35,9 @@ const Navbar = () => {
               <Link to={'/login'}>로그인</Link> / <Link to={'/register'}>회원가입</Link>
             </>
           )}
+=======
+          <Link to={'/login'}>로그인</Link> / <Link to={'/register'}>회원가입</Link>
+>>>>>>> 6576008f5d4b180701fdf7af6ef5d5a5fea2c296
         </NavbarItemRight>
       </NavbarListRight>
     </NavbarLayout>
