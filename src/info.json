@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "textsub": "졸업학점 계산기",
+    "infoImage": "images/3d-calculator.png",
+    "infoTitle": "졸업학점 계산기 사용하기",
+    "infoLink": "https://gcc.sku-sku.com/"
+  },
+  {
+    "id": 2,
+    "textsub": "학교 근처 맛집",
+    "infoImage": "images/udon.png",
+    "infoTitle": "원본 게시물 보기",
+    "infoLink": "https://everytime.kr/389111/v/334654654"
+  },
+  {
+    "id": 3,
+    "textsub": "수강신청 팁",
+    "infoImage": "images/idea.png",
+    "infoTitle": "원본 게시물 보기",
+    "infoLink": "https://everytime.kr/389200/v/171647275",
+    "infoLink": "https://everytime.kr/389200/v/170913071",
+    "infoLink": "https://everytime.kr/389200/v/161276816",
+    "infoLink": "https://everytime.kr/389200/v/234954981"
+  },
+  {
+    "id": 4,
+    "textsub": "추천 어플",
+    "infoImage": "images/development.png",
+    "infoTitle": "원문 게시물 보기",
+    "infoLink": "https://everytime.kr/389200/v/333397336"
+  },
+  {
+    "id": 5,
+    "textsub": "영커 교재 사용법",
+    "infoImage": "images/book.png",
+    "infoTitle": "",
+    "infoLink": ""
+  },
+  {
+    "id": 6,
+    "textsub": "논문 보는법",
+    "infoImage": "images/dissertation.png",
+    "infoTitle": "",
+    "infoLink": "https://everytime.kr/389111/v/295963788"
+  }
+]
