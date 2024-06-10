@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import LinkClick from 'components/LinkClick';
 import SwiperImage from 'components/SwiperImage';
-import Search from 'components/Search';
+// import Search from 'components/Search';
 import Frequencyinfo from 'components/Frequencyinfo';
 import UsefulInfo from 'components/UsefulInfo';
 import Question from 'components/Question';
@@ -14,7 +14,7 @@ const Home = () => {
         <SwiperImage />
         <LinkClick />
       </LinkClickRow>
-      <Search />
+      {/* <Search /> */}
       <Frequencyinfo />
       <UsefulInfo />
       <Question />
@@ -29,6 +29,7 @@ const LinkClickRow = styled.div`
   display: flex;
   justify-content: center;
   gap: 4rem;
+  margin-bottom: 2rem;
 `;
 
 export default Home;

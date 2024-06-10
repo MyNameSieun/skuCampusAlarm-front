@@ -21,8 +21,8 @@ const Navbar = () => {
         <NavbarItemRight className="loginSignUp">
           {currentUser ? (
             <>
-              <span>{currentUser.nickname}</span>
-              <span onClick={logout}>로그아웃</span>
+              <NavbarUserText>{currentUser.nickname}</NavbarUserText>님 /
+              <NavbarLogoutText onClick={logout}>로그아웃</NavbarLogoutText>
             </>
           ) : (
             <>
@@ -41,6 +41,7 @@ const NavbarLayout = styled.div`
   align-items: center;
   padding: 30px 200px;
   background-color: white;
+  white-space: nowrap;
 `;
 
 const NavbarListLeft = styled.ul`
@@ -69,6 +70,12 @@ const NavbarListRight = styled.ul`
   display: flex;
   align-items: baseline;
 `;
+const NavbarUserText = styled.span`
+  margin-right: 3px;
+`;
+const NavbarLogoutText = styled.span`
+  margin-left: 3px;
+`;
 
 const NavbarItemRight = styled.li`
   font-size: 18px;
@@ -76,12 +83,10 @@ const NavbarItemRight = styled.li`
   cursor: pointer;
 
   &.questionBoard {
-    color: #5c5c5c;
     font-size: 23px;
   }
 
   &.loginSignUp {
-    color: #8b8b8b;
     font-size: 15px;
   }
 `;
