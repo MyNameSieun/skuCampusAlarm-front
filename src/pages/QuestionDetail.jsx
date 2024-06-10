@@ -25,6 +25,11 @@ const QuestionDetail = () => {
 
   // 삭제
   const handleDelete = async () => {
+    const boredDelete = window.confirm('게시물을 삭제하시겠습니까?');
+    if (!boredDelete) {
+      return;
+    }
+
     try {
       await axios.delete(`http://localhost:8080/posts/${id}`, {
         withCredentials: true

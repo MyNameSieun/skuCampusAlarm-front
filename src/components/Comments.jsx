@@ -16,11 +16,17 @@ const Comments = () => {
   const { id } = useParams();
 
   const handleCommentSubmit = async () => {
+    if (!comment.trim()) {
+      alert('댓글을 입력해주세요.');
+      return;
+    }
     try {
       await axios.post(`http://localhost:8080/posts/${id}/comment`, { content: comment }, { withCredentials: true });
       setComment('');
       const res = await axios.get(`http://localhost:8080/posts/${id}`);
       setSingle(res.data);
+
+      window.location.reload();
     } catch (error) {
       console.log(error);
       alert(error.response.data);
@@ -29,12 +35,19 @@ const Comments = () => {
 
   // 삭제
   const handleCommentDelete = async (commentId) => {
+    const confirmDelete = window.confirm('댓글을 삭제하시겠습니까?');
+    if (!confirmDelete) {
+      return;
+    }
+
     try {
       await axios.delete(`http://localhost:8080/posts/${id}/comment/${commentId}`, {
         withCredentials: true
       });
       const res = await axios.get(`http://localhost:8080/posts/${id}`);
       setSingle(res.data);
+
+      window.location.reload();
     } catch (error) {
       console.log(error);
       alert(error.response.data);
@@ -112,18 +125,18 @@ const Comments = () => {
                         onChange={(e) => setCommentUpdateValue(e.target.value)}
                       />
                       <CommentButtonBox>
-                        <Button onClick={() => handleCommentUpdate(item.id)}>저장</Button>
-                        <Button onClick={() => setCommentUpdateId(null)}>취소</Button>
+                        <CommnetButtonText onClick={() => handleCommentUpdate(item.id)}>저장</CommnetButtonText>
+                        <CommnetButtonText onClick={() => setCommentUpdateId(null)}>취소</CommnetButtonText>
                       </CommentButtonBox>
                     </CommentUpdateBox>
                   ) : (
                     <Content>{item.content}</Content>
                   )}
                   {commentUpdateId !== item.id && (
-                    <ButtonBox>
-                      <Button onClick={() => handleEditClick(item.id, item.content)}>수정</Button>
-                      <Button onClick={() => handleCommentDelete(item.id)}>삭제</Button>
-                    </ButtonBox>
+                    <CommentButtonBox>
+                      <CommnetButtonText onClick={() => handleEditClick(item.id, item.content)}>수정</CommnetButtonText>
+                      <CommnetButtonText onClick={() => handleCommentDelete(item.id)}>삭제</CommnetButtonText>
+                    </CommentButtonBox>
                   )}
                 </Comment>
               ))}
@@ -196,11 +209,11 @@ const Comment = styled.div`
 
 const CommentHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 0.5rem;
 `;
 
 const CommentAuthor = styled.span`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 `;
 
@@ -211,7 +224,7 @@ const CommentDate = styled.span`
 
 const Content = styled.span`
   white-space: pre-line;
-  font-size: 16px;
+  font-size: 15px;
 `;
 
 const CommentUpdateBox = styled.div`
@@ -222,12 +235,14 @@ const CommentUpdateBox = styled.div`
 
 const CommentButtonBox = styled.div`
   display: flex;
+  justify-content: flex-end;
   gap: 0.5rem;
 `;
 
-const ButtonBox = styled.div`
+const CommnetButtonText = styled.div`
+  cursor: pointer;
   display: flex;
-  gap: 0.5rem;
+  font-size: 13px;
 `;
 
 const CommenTextArea = styled.textarea`

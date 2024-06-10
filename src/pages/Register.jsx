@@ -55,9 +55,9 @@ const Register = () => {
       <RegisterH1>회원가입을 진행해주세요.</RegisterH1>
       <RegisterH2>
         계정이 있으신가요?
-        <RegisterLinkBlue>
+        <RegisterLink>
           <Link to={'/login'}>로그인하기 {'>'}</Link>
-        </RegisterLinkBlue>
+        </RegisterLink>
       </RegisterH2>
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
         <RegisterForm>
@@ -139,14 +139,16 @@ const RegisterH2 = styled.h2`
   font-size: 16px;
   margin-bottom: 2rem;
   color: #555;
-`;
-
-const RegisterLinkBlue = styled.span`
-  margin-left: 8px;
-  a {
-    text-decoration: none;
+  a:link {
     color: #3867d6;
   }
+  a:visited {
+    color: #3867d6;
+  }
+`;
+
+const RegisterLink = styled.span`
+  margin-left: 8px;
 `;
 
 const RegisterForm = styled(Form)`

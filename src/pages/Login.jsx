@@ -40,9 +40,9 @@ const Login = () => {
     <LoginLayout>
       <LoginH1>로그인을 진행해주세요.</LoginH1>
       <LoginrH2>
-        <LoginLinkBule>
-          <Link to={'/register'}>회원가입하기 {'>'}</Link>
-        </LoginLinkBule>
+        <RegisterLink>
+          회원이 아니신가요? <Link to={'/register'}>회원가입하기 {'>'}</Link>
+        </RegisterLink>
       </LoginrH2>
       <Formik initialValues={initialValues} onSubmit={handleLogin} validationSchema={validationSchema}>
         <LoginForm>
@@ -105,7 +105,7 @@ const LoginH1 = styled.h1`
   color: #333;
 `;
 const LoginrH2 = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 3rem;
   color: #555;
   a:link {
@@ -115,7 +115,7 @@ const LoginrH2 = styled.h2`
     color: #3867d6;
   }
 `;
-const LoginLinkBule = styled.span`
+const RegisterLink = styled.span`
   margin-left: 8px;
 `;
 
