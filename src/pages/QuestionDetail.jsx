@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
+import { AuthContext } from '../context/AuthContext';
 import Comments from 'components/Comments';
 import axios from 'axios';
 
@@ -50,10 +50,13 @@ const QuestionDetail = () => {
         </QustionItem>
         <QuestionTitle>{single.title}</QuestionTitle>
         <QuestionContent>{single.content}</QuestionContent>
-        <QustionButtonBox>
-          <QustionButton>수정</QustionButton>
-          <QustionButton onClick={handleDelete}>삭제</QustionButton>
-        </QustionButtonBox>
+        {AuthContext && AuthContext.id === single.authorId && (
+          <QustionButtonBox>
+            <QustionButton>수정</QustionButton>
+            <QustionButton onClick={handleDelete}>삭제</QustionButton>
+          </QustionButtonBox>
+        )}
+
         <QustionBox>
           <img src="/images/comment.png" />
           <QustionComment>{single.comments ? single.comments.length : 0}</QustionComment>

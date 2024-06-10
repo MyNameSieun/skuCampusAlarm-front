@@ -96,35 +96,39 @@ const Comments = () => {
             <TextArea placeholder="댓글" value={comment} onChange={(e) => setComment(e.target.value)} />
             <Button onClick={handleCommentSubmit}>등록</Button>
           </InputContainer>
-          {single.comments?.map((item) => (
-            <Comment key={item.id}>
-              <CommentHeader>
-                <CommentAuthor>{item.author.nickname}</CommentAuthor>
-                <CommentDate>{formatDate(item.createdAt)}</CommentDate>
-              </CommentHeader>
-              {commentUpdateId === item.id ? (
-                <CommentUpdateBox>
-                  <CommenTextArea
-                    placeholder="댓글 수정"
-                    value={commentUpdateValue}
-                    onChange={(e) => setCommentUpdateValue(e.target.value)}
-                  />
-                  <CommentButtonBox>
-                    <Button onClick={() => handleCommentUpdate(item.id)}>저장</Button>
-                    <Button onClick={() => setCommentUpdateId(null)}>취소</Button>
-                  </CommentButtonBox>
-                </CommentUpdateBox>
-              ) : (
-                <Content>{item.content}</Content>
-              )}
-              {commentUpdateId !== item.id && (
-                <ButtonBox>
-                  <Button onClick={() => handleEditClick(item.id, item.content)}>수정</Button>
-                  <Button onClick={() => handleCommentDelete(item.id)}>삭제</Button>
-                </ButtonBox>
-              )}
-            </Comment>
-          ))}
+          {AuthContext && AuthContext.id === single.authorId && (
+            <>
+              {single.comments?.map((item) => (
+                <Comment key={item.id}>
+                  <CommentHeader>
+                    <CommentAuthor>{item.author.nickname}</CommentAuthor>
+                    <CommentDate>{formatDate(item.createdAt)}</CommentDate>
+                  </CommentHeader>
+                  {commentUpdateId === item.id ? (
+                    <CommentUpdateBox>
+                      <CommenTextArea
+                        placeholder="댓글 수정"
+                        value={commentUpdateValue}
+                        onChange={(e) => setCommentUpdateValue(e.target.value)}
+                      />
+                      <CommentButtonBox>
+                        <Button onClick={() => handleCommentUpdate(item.id)}>저장</Button>
+                        <Button onClick={() => setCommentUpdateId(null)}>취소</Button>
+                      </CommentButtonBox>
+                    </CommentUpdateBox>
+                  ) : (
+                    <Content>{item.content}</Content>
+                  )}
+                  {commentUpdateId !== item.id && (
+                    <ButtonBox>
+                      <Button onClick={() => handleEditClick(item.id, item.content)}>수정</Button>
+                      <Button onClick={() => handleCommentDelete(item.id)}>삭제</Button>
+                    </ButtonBox>
+                  )}
+                </Comment>
+              ))}
+            </>
+          )}
         </CommentContainer>
       </Container>
     </CommentsLayout>
