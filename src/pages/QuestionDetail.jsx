@@ -49,7 +49,8 @@ const QuestionDetail = () => {
           <QuestionNickname>{single.nickname}</QuestionNickname>
         </QustionItem>
         <QuestionTitle>{single.title}</QuestionTitle>
-        <QuestionContent>{single.content}</QuestionContent>
+        <QuestionContent dangerouslySetInnerHTML={{ __html: single.content }} />
+
         {AuthContext && AuthContext.id === single.authorId && (
           <QustionButtonBox>
             <QustionButton>수정</QustionButton>
@@ -100,11 +101,11 @@ const QuestionNickname = styled.div`
   font-size: 20px;
 `;
 const QuestionTitle = styled.div`
-  margin-top: 1.4rem;
+  margin: 1.4rem 0 3rem 0;
+
   font-size: 2rem;
   font-weight: bold;
   color: #464646;
-  margin-bottom: 1rem;
 `;
 const QuestionContent = styled.div`
   color: #4a4747;

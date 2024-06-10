@@ -1,11 +1,22 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const QuestionSearch = () => {
+const QuestionSearch = ({ setSearchTerm }) => {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = () => {
+    setSearchTerm(searchText);
+  };
+
+  const handleInputChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <QuestionSearchLayout>
       <QuestionSearchInputBox>
-        <QuestionSearchSearchImage src="/images/search.png" />
-        <QuestionSearchInput placeholder="질문을 검색해보세요!" />
+        <QuestionSearchInput placeholder="질문을 검색해보세요!" value={searchText} onChange={handleInputChange} />
+        <QuestionSearchSearchImage src="/images/search.png" onClick={handleSearch} alt="search-icon" />
       </QuestionSearchInputBox>
     </QuestionSearchLayout>
   );

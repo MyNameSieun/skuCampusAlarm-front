@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const QuestionBulletin = () => {
   const navigate = useNavigate();
   const [board, setBoard] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const getBoard = async () => {
@@ -22,37 +23,38 @@ const QuestionBulletin = () => {
     getBoard();
   }, []);
 
-  console.log(board);
+  const filteredBoard = board.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <QuestionLayout>
       <QuestionBox>
         <QuestionImage src="/images/leftArrow.png" onClick={() => navigate(-1)} />
         <QuestionText>질문 게시판</QuestionText>
-        <QustionButtonBox>
-          <QuestionButtonImage src="/images/pencil.png" />
-          <QuestionButton>
-            <Link to={'/write'}>질문하기</Link>
-          </QuestionButton>
-        </QustionButtonBox>
+        <Link to={'/write'}>
+          <QustionButtonBox>
+            <QuestionButtonImage src="/images/pencil.png" />
+            <QuestionButton>질문하기</QuestionButton>
+          </QustionButtonBox>
+        </Link>
       </QuestionBox>
-      <QuestionSearch />
-      {board.map((item) => {
+
+      <QuestionSearch setSearchTerm={setSearchTerm} />
+      {filteredBoard.map((item) => {
         return (
           <Link to={`/questionDetail/${item.id}`} key={item.id}>
             <QuestionList>
               <QustionTitle>{item.title}</QustionTitle>
-              <QustionItem>
+              <QuestionItem>
                 <QusitonLeft>
-                  <QustionContent>{item.content}</QustionContent>
+                  <QuestionContent dangerouslySetInnerHTML={{ __html: item.content }} />
                 </QusitonLeft>
-                <QustionRight>
+                <QuestionRight>
                   <div>{item.author.nickname}</div>
                   <QustionTime>{item.createdAt?.replace('T', ' ')}</QustionTime>
                   <img src="/images/comment.png" />
                   <QustionComment>{item.comments ? item.comments.length : 0}</QustionComment>
-                </QustionRight>
-              </QustionItem>
+                </QuestionRight>
+              </QuestionItem>
               <Hr />
             </QuestionList>
           </Link>
@@ -66,7 +68,6 @@ export default QuestionBulletin;
 
 const QuestionLayout = styled.div`
   padding: 0 250px 180px 250px;
-  height: 110vh;
   background-color: white;
 `;
 const QuestionBox = styled.div`
@@ -105,6 +106,7 @@ const QuestionButton = styled.span`
   color: white;
   font-size: 1rem;
   font-weight: bold;
+  margin-left: 5px;
   cursor: pointer;
   a:link {
     color: #ffffff;
@@ -123,14 +125,14 @@ const QuestionList = styled.ul`
   margin-top: 1.5rem;
   cursor: pointer;
 `;
-const QustionItem = styled.li`
+const QuestionItem = styled.li`
   display: flex;
   justify-content: space-between;
   color: #8b8b8b;
   font-size: 16px;
 `;
 const QusitonLeft = styled.div``;
-const QustionRight = styled.div`
+const QuestionRight = styled.div`
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -146,7 +148,12 @@ const QustionTitle = styled.div`
   margin-bottom: 13px;
 `;
 
-const QustionContent = styled.div``;
+const QuestionContent = styled.div`
+  height: 1.2rem;
+  white-space: nowrap; // 한줄로만
+  overflow: hidden;
+  text-overflow: ellipsis; // 넘치면 ... 표시
+`;
 const QustionTime = styled.div`
   margin: 0 0.7rem;
 `;

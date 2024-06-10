@@ -39,7 +39,9 @@ const Question = () => {
         </Link>
 
         <QuestionBox>
-          <QuestionList>최근 올라온 질문</QuestionList>
+          <Link to={'/'}>
+            <QuestionList>최근 올라온 질문</QuestionList>
+          </Link>
           <Hr />
           {questions.slice(0, 5).map((item) => (
             <QuestionItem key={item.id}>
